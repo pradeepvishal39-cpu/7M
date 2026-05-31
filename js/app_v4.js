@@ -128,29 +128,45 @@ function initNavbar() {
   // ---- Shared open/close helpers ----
   function openMenu() {
     if (!mobileNav) return;
-    // Position panel flush below where navbar currently sits
     const navBottom = navbar ? navbar.getBoundingClientRect().bottom : 60;
     mobileNav.style.top = navBottom + 'px';
     mobileNav.classList.add('open');
-    if (hamburger) hamburger.classList.add('active');
+    if (hamburger) {
+      hamburger.classList.add('active');
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+    document.body.classList.add('mobile-nav-open');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     if (!mobileNav) return;
     mobileNav.classList.remove('open');
-    if (hamburger) hamburger.classList.remove('active');
+    if (hamburger) {
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+    document.body.classList.remove('mobile-nav-open');
     document.body.style.overflow = '';
   }
 
   // ---- Hamburger: TOGGLE (open if closed, close if open) ----
   if (hamburger && mobileNav) {
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.setAttribute('aria-controls', 'mobile-nav-panel');
+    hamburger.setAttribute('aria-label', 'Open menu');
+    mobileNav.id = mobileNav.id || 'mobile-nav-panel';
+    mobileNav.setAttribute('role', 'navigation');
+    mobileNav.setAttribute('aria-label', 'Mobile navigation');
+
     hamburger.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent click bubbling to document
+      e.stopPropagation();
       if (mobileNav.classList.contains('open')) {
         closeMenu();
+        hamburger.setAttribute('aria-label', 'Open menu');
       } else {
         openMenu();
+        hamburger.setAttribute('aria-label', 'Close menu');
       }
     });
   }
@@ -177,12 +193,26 @@ function initNavbar() {
     }
   });
 
-  // ---- Close menu when a nav link is tapped ----
+  // ---- Close menu when a nav link or button is tapped ----
   if (mobileNav) {
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => closeMenu());
+    mobileNav.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => closeMenu());
     });
   }
+
+  // ---- Close when tapping the backdrop ----
+  document.addEventListener('click', (e) => {
+    if (!mobileNav?.classList.contains('open')) return;
+    const target = e.target;
+    if (
+      target instanceof Node &&
+      !mobileNav.contains(target) &&
+      !hamburger?.contains(target)
+    ) {
+      closeMenu();
+      if (hamburger) hamburger.setAttribute('aria-label', 'Open menu');
+    }
+  });
 
   // Set active nav link
   const path = window.location.pathname.split('/').pop() || 'index.html';
