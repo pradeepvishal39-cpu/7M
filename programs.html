@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programs | 7 Muscle Fitness Studio, Urapakkam</title>
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="512x512">
+  <link rel="apple-touch-icon" href="img/7navicon.png" sizes="192x192">
+  <meta name="description" content="Weight loss, muscle building, personal training, and women's fitness programs at 7 Muscle Fitness Studio.">
+  <link rel="stylesheet" href="css/styles.css?v=20260612">
+  <link rel="stylesheet" href="css/graphics.css?v=20260519a">
+  <link rel="stylesheet" href="css/loader.css?v=20260519a">
+  <link rel="stylesheet" href="css/luxury.css?v=20260531">
+  <link rel="stylesheet" href="css/mobile.css?v=20260601">
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <!-- GSAP Animation Library -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- PREMIUM GSAP LOADER -->
+<div id="gsap-loader">
+  <div class="loader-content">
+    <h1 class="loader-logo">7 MUSCLE</h1>
+    <p class="loader-tagline">Fitness Studio</p>
+    <div class="loader-progress">
+      <div class="loader-progress-bar"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT WRAPPER -->
+<div id="main-content">
+
+<div class="urgency-bar">
+  <span class="pulse-dot"></span>
+  🏆 JOIN URAPAKKAM'S TOP-RATED GYM — <a href="membership.html#payment-section" style="color:#fff;text-decoration:underline;font-weight:700">FREE TRIAL ENDS THIS WEEK →</a>
+</div>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="img/Fineshyt.png" alt="7 Muscle Fitness Logo"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html" class="active">Programs</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="booking.html">Book Trial</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="booking.html#book-trial" class="btn btn-gold">Free Trial</a>
+    <a href="/login" data-auth-login class="btn btn-outline">Login</a>
+  </div>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="programs.html">Programs</a>
+  <a href="membership.html">Membership</a>
+  <a href="booking.html#book-trial">Book Free Trial</a>
+  <a href="/dashboard" data-auth-account">My Account</a>
+</div>
+
+<!-- IMMERSIVE HERO -->
+<section class="hero-immersive" id="programs-hero" style="min-height:70vh;">
+  <div class="hero-immersive-bg gs-parallax" data-speed="0.8" style="background:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80') center/cover;"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-immersive-content" style="grid-template-columns: 1fr; text-align:center;">
+    <div>
+      <div class="section-tag" style="justify-content:center; margin-bottom:16px;">Our Expertise</div>
+      <h1 class="hero-title reveal-text">
+        <span>Train For</span><br>
+        <span class="text-gold">Your Goal</span>
+      </h1>
+      <p class="hero-sub fade-in-up" style="margin: 24px auto 0; max-width:600px;">
+        Expert-designed programs for every fitness level and objective — proven by 500+ member transformations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM 1: WEIGHT LOSS -->
+<section id="weight-loss" style="background:var(--black); padding: 120px 0; position:relative; overflow:hidden;">
+  <div style="position:absolute; top:10%; right:-10%; width:800px; height:800px; background:radial-gradient(circle, rgba(255,215,0,0.03), transparent 70%); pointer-events:none;"></div>
+  <div class="container">
+    <div class="two-col-grid" style="align-items:center; gap:80px;">
+      <div class="gs-reveal" style="position:relative;">
+        <img src="img/transformation_1.png" alt="Weight Loss Training" style="width:100%; height:600px; object-fit:cover; border-radius:var(--radius-lg); box-shadow:0 30px 60px rgba(0,0,0,0.5);">
+        <!-- floating stat -->
+        <div class="glass-panel glass-floating-card" style="position:absolute; bottom:-30px; right:-30px; width:220px; z-index:2;">
+          <div class="text-display-lg">-15kg</div>
+          <div style="color:var(--gray); font-size:13px; text-transform:uppercase; letter-spacing:0.1em;">Avg Body Fat Lost</div>
+        </div>
+      </div>
+      <div class="gs-reveal">
+        <div class="section-tag">Program 01</div>
+        <h2 class="section-title">Weight <span class="text-gold">Loss</span></h2>
+        <p style="color:var(--gray); font-size:16px; line-height:1.8; margin-bottom:32px;">A science-backed combination of resistance training and strategic cardio designed to maximize fat burning while preserving lean muscle mass.</p>
+        
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px;">
+          <div class="glass-panel" style="padding:20px;">
+            <div style="color:var(--gold); font-size:24px; margin-bottom:8px;">⏱️</div>
+            <div style="font-weight:700; color:var(--white); margin-bottom:4px;">12 Weeks</div>
+            <div style="color:var(--gray); font-size:12px;">Average Duration</div>
+          </div>
+          <div class="glass-panel" style="padding:20px;">
+            <div style="color:var(--gold); font-size:24px; margin-bottom:8px;">🔥</div>
+            <div style="font-weight:700; color:var(--white); margin-bottom:4px;">5x / Week</div>
+            <div style="color:var(--gray); font-size:12px;">Training Frequency</div>
+          </div>
+        </div>
+        
+        <ul style="list-style:none; padding:0; margin:0 0 40px; display:flex; flex-direction:column; gap:16px; color:var(--light);">
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Personalized macro tracking</li>
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> HIIT + strength combination</li>
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Weekly composition assessment</li>
+        </ul>
+        <a href="booking.html#book-trial" class="btn btn-outline-gold btn-lg">Book Free Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM 2: MUSCLE BUILDING -->
+<section id="muscle-building" style="background:var(--black2); padding: 120px 0; border-top:1px solid rgba(255,215,0,0.05); position:relative; overflow:hidden;">
+  <div style="position:absolute; top:30%; left:-10%; width:800px; height:800px; background:radial-gradient(circle, rgba(255,215,0,0.03), transparent 70%); pointer-events:none;"></div>
+  <div class="container">
+    <div class="two-col-grid" style="align-items:center; gap:80px;">
+      <div class="gs-reveal" style="order:2;">
+        <div style="position:relative;">
+          <img src="img/hero_gym_model.png" alt="Muscle Building Training" style="width:100%; height:600px; object-fit:cover; border-radius:var(--radius-lg); box-shadow:0 30px 60px rgba(0,0,0,0.5);">
+          <!-- floating stat -->
+          <div class="glass-panel glass-floating-card" style="position:absolute; top:-30px; left:-30px; width:220px; z-index:2; animation-delay:1s;">
+            <div class="text-display-lg">+8kg</div>
+            <div style="color:var(--gray); font-size:13px; text-transform:uppercase; letter-spacing:0.1em;">Pure Lean Muscle</div>
+          </div>
+        </div>
+      </div>
+      <div class="gs-reveal" style="order:1;">
+        <div class="section-tag">Program 02</div>
+        <h2 class="section-title">Muscle <span class="text-gold">Building</span></h2>
+        <p style="color:var(--gray); font-size:16px; line-height:1.8; margin-bottom:32px;">Progressive overload hypertrophy programs built around compound movements and smart volume management. Break through any plateau.</p>
+        
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px;">
+          <div class="glass-panel" style="padding:20px;">
+            <div style="color:var(--gold); font-size:24px; margin-bottom:8px;">💪</div>
+            <div style="font-weight:700; color:var(--white); margin-bottom:4px;">Hypertrophy</div>
+            <div style="color:var(--gray); font-size:12px;">Primary Focus</div>
+          </div>
+          <div class="glass-panel" style="padding:20px;">
+            <div style="color:var(--gold); font-size:24px; margin-bottom:8px;">🥩</div>
+            <div style="font-weight:700; color:var(--white); margin-bottom:4px;">Bulking Diet</div>
+            <div style="color:var(--gray); font-size:12px;">Nutrition Plan</div>
+          </div>
+        </div>
+        
+        <ul style="list-style:none; padding:0; margin:0 0 40px; display:flex; flex-direction:column; gap:16px; color:var(--light);">
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Periodized programming</li>
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Compound + isolation balance</li>
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Strength milestone tracking</li>
+        </ul>
+        <a href="booking.html#book-trial" class="btn btn-gold btn-lg">Book Free Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM 3: PERSONAL TRAINING -->
+<section id="personal-training" style="background:var(--black); padding: 120px 0; border-top:1px solid rgba(255,215,0,0.05);">
+  <div class="container">
+    <div class="two-col-grid" style="align-items:center; gap:80px;">
+      <div class="gs-reveal" style="position:relative;">
+        <img src="https://images.unsplash.com/photo-1584863288857-ba8fa228cb07?w=800&q=80" alt="Personal Training" style="width:100%; height:600px; object-fit:cover; border-radius:var(--radius-lg); box-shadow:0 30px 60px rgba(0,0,0,0.5);">
+        <!-- floating stat -->
+        <div class="glass-panel glass-floating-card" style="position:absolute; bottom:-30px; right:-30px; width:220px; z-index:2;">
+          <div class="text-display-md">1-on-1</div>
+          <div style="color:var(--gray); font-size:13px; text-transform:uppercase; letter-spacing:0.1em;">Dedicated Coaching</div>
+        </div>
+      </div>
+      <div class="gs-reveal">
+        <div class="section-tag">Program 03</div>
+        <h2 class="section-title">Personal <span class="text-gold">Training</span></h2>
+        <p style="color:var(--gray); font-size:16px; line-height:1.8; margin-bottom:32px;">100% one-on-one coaching with a dedicated trainer. Every session is tailored to your unique body, goals, and schedule. The fastest path to elite results.</p>
+        
+        <ul style="list-style:none; padding:0; margin:0 0 40px; display:flex; flex-direction:column; gap:16px; color:var(--light);">
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Custom program built for you alone</li>
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Form correction & injury prevention</li>
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Direct WhatsApp access to your trainer</li>
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Complete nutrition & recovery planning</li>
+        </ul>
+        <a href="booking.html#book-trial" class="btn btn-outline-gold btn-lg">Book Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM 4: WOMEN'S FITNESS -->
+<section id="womens-fitness" style="background:var(--black2); padding: 120px 0; border-top:1px solid rgba(255,215,0,0.05);">
+  <div class="container">
+    <div class="two-col-grid" style="align-items:center; gap:80px;">
+      <div class="gs-reveal" style="order:2; position:relative;">
+        <img src="img/transformation_2.png" alt="Women's Fitness" style="width:100%; height:600px; object-fit:cover; border-radius:var(--radius-lg); box-shadow:0 30px 60px rgba(0,0,0,0.5);">
+      </div>
+      <div class="gs-reveal" style="order:1;">
+        <div class="section-tag">Program 04</div>
+        <h2 class="section-title">Women's <span class="text-gold">Fitness</span></h2>
+        <p style="color:var(--gray); font-size:16px; line-height:1.8; margin-bottom:32px;">A dedicated, empowering program designed specifically for women. Train in a supportive environment, build strength, and gain incredible confidence.</p>
+        
+        <ul style="list-style:none; padding:0; margin:0 0 40px; display:flex; flex-direction:column; gap:16px; color:var(--light);">
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Female-led instruction (Priya)</li>
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Hormonal health & fitness education</li>
+          <li style="display:flex; align-items:center; gap:12px;"><span style="color:var(--gold);">✓</span> Strength training without bulking</li>
+        </ul>
+        <a href="booking.html#book-trial" class="btn btn-gold btn-lg">Book Free Trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="text-align:center; padding:100px 0; background:var(--black);">
+  <div class="container">
+    <h2 class="section-title">Not Sure Which Program?<br><span class="text-gold">Let Us Help</span></h2>
+    <p class="section-sub mx-auto">Book a free consultation and our trainers will recommend the perfect program for your goals.</p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a href="booking.html#book-trial" class="btn btn-gold btn-lg">Book Free Trial</a>
+      <a href="tel:6382973619" class="btn btn-outline btn-lg">📞 Talk to a Trainer</a>
+    </div>
+  </div>
+</section>
+
+<!-- LUXURY FOOTER -->
+<footer class="footer-luxury" style="background:var(--black2); padding:80px 0 30px; border-top:1px solid rgba(255,215,0,0.05);">
+  <div class="footer-watermark">7 MUSCLE</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="img/Fineshyt.png" alt="7 Muscle Fitness Logo" style="height:56px;width:auto"></div>
+        <p class="footer-desc">Urapakkam's top-rated gym committed to transforming lives through fitness, discipline, and expert guidance.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="membership.html">Membership</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <ul class="footer-links">
+          <li><a href="programs.html#weight-loss">Weight Loss</a></li>
+          <li><a href="programs.html#muscle-building">Muscle Building</a></li>
+          <li><a href="programs.html#personal-training">Personal Training</a></li>
+          <li><a href="programs.html#womens-fitness">Women's Fitness</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:6382973619" style="color:var(--gold);">6382973619</a></li>
+          <li><a href="mailto:pradeepvishal007@gmail.com">pradeepvishal007@gmail.com</a></li>
+          <li><span style="color:var(--gray);font-size:14px">📍 Urapakkam, Chennai</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom mt-md">
+      <div class="footer-copy" style="color:var(--gray); font-size:13px;">&copy; 2024 7 Muscle Fitness Studio. All rights reserved.</div>
+      <div style="font-size:13px;color:var(--gray)">Made with 🏋️ in Urapakkam, Chennai</div>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="https://wa.me/916382973619" class="whatsapp-btn social-wa whatsapp-link" title="Chat on WhatsApp" target="_blank">
+    <!-- WhatsApp SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="IconChangeColor"> <path d="M23.328 19.177c-0.401-0.203-2.354-1.156-2.719-1.292-0.365-0.13-0.63-0.198-0.896 0.203-0.26 0.391-1.026 1.286-1.26 1.547s-0.464 0.281-0.859 0.104c-0.401-0.203-1.682-0.62-3.203-1.984-1.188-1.057-1.979-2.359-2.214-2.76-0.234-0.396-0.026-0.62 0.172-0.818 0.182-0.182 0.401-0.458 0.604-0.698 0.193-0.24 0.255-0.401 0.396-0.661 0.13-0.281 0.063-0.5-0.036-0.698s-0.896-2.161-1.229-2.943c-0.318-0.776-0.651-0.677-0.896-0.677-0.229-0.021-0.495-0.021-0.76-0.021s-0.698 0.099-1.063 0.479c-0.365 0.401-1.396 1.359-1.396 3.297 0 1.943 1.427 3.823 1.625 4.104 0.203 0.26 2.807 4.26 6.802 5.979 0.953 0.401 1.693 0.641 2.271 0.839 0.953 0.302 1.823 0.26 2.51 0.161 0.76-0.125 2.354-0.964 2.688-1.901 0.339-0.943 0.339-1.724 0.24-1.901-0.099-0.182-0.359-0.281-0.76-0.458zM16.083 29h-0.021c-2.365 0-4.703-0.641-6.745-1.839l-0.479-0.286-5 1.302 1.344-4.865-0.323-0.5c-1.318-2.099-2.021-4.521-2.021-7.010 0-7.26 5.943-13.182 13.255-13.182 3.542 0 6.865 1.38 9.365 3.88 2.5 2.479 3.88 5.802 3.88 9.323-0.010 7.255-5.948 13.177-13.25 13.177zM27.359 4.599c-3.042-2.938-7.042-4.599-11.297-4.599-8.776 0-15.922 7.115-15.927 15.859 0 2.792 0.729 5.516 2.125 7.927l-2.26 8.214 8.448-2.203c2.328 1.255 4.948 1.927 7.615 1.932h0.005c8.781 0 15.927-7.115 15.932-15.865 0-4.234-1.651-8.219-4.661-11.214z" fill="#ffffff"></path></svg>
+  </a>
+  <a href="membership.html#payment-section" class="sticky-join-btn">Join Now</a>
+</div>
+
+</div>
+
+<script src="js/supabase_v4.js?v=20260519a"></script>
+<script src="js/loader.js?v=20260519a"></script>
+<script src="js/gsap_animations.js?v=20260519a"></script>
+<script src="js/app_v4.js?v=20260614"></script>
+</body>
+</html>

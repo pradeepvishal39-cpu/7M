@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7 Muscle Fitness Studio | Best Gym in Urapakkam, Chennai</title>
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="512x512">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="384x384">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="256x256">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="128x128">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="img/7navicon.png" sizes="192x192">
+  <meta name="description"
+    content="Transform your body at Urapakkam's top-rated gym. Expert trainers, premium equipment, proven results. 4.9⭐ with 90+ reviews. Book your free trial today!">
+  <link rel="stylesheet" href="css/styles.css?v=20260612">
+  <link rel="stylesheet" href="css/graphics.css?v=20260519a">
+  <link rel="stylesheet" href="css/loader.css?v=20260519a">
+  <link rel="stylesheet" href="css/luxury.css?v=20260611"> <!-- NEW LUXURY STYLES -->
+  <link rel="stylesheet" href="css/mobile.css?v=20260611">
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <!-- GSAP Animation Library -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <!-- PREMIUM GSAP LOADER -->
+  <div id="gsap-loader">
+    <div class="loader-content">
+      <h1 class="loader-logo">7 MUSCLE</h1>
+      <p class="loader-tagline">Fitness Studio</p>
+      <div class="loader-progress">
+        <div class="loader-progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <div id="main-content">
+  <div class="urgency-bar">
+  <span class="pulse-dot"></span>
+  🏆 JOIN URAPAKKAM'S TOP-RATED GYM — <a href="membership.html#payment-section" style="color:#fff;text-decoration:underline;font-weight:700">FREE TRIAL ENDS THIS WEEK →</a>
+</div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo"><img src="img/Fineshyt.png" alt="7 Muscle Fitness Logo"></a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="booking.html#book-trial">Book Trial</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="booking.html#book-trial" class="btn btn-gold">Free Trial</a>
+      <a href="/login" data-auth-login class="btn btn-outline">Login</a>
+    </div>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="membership.html">Membership</a>
+    <a href="booking.html">Book Free Trial</a>
+    <a href="/dashboard" data-auth-account">My Account</a>
+  </div>
+
+  <!-- IMMERSIVE HERO -->
+  <section class="hero-immersive" id="home">
+    <div class="hero-immersive-bg gs-parallax" data-speed="0.8"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid-lines"></div>
+
+    <div class="hero-immersive-content">
+      <div>
+        <div class="hero-badge">
+          ⭐ 4.9 RATED · 90+ REVIEWS · URAPAKKAM'S #1 GYM
+        </div>
+        <h1 class="hero-title reveal-text">
+          <span>TRANSFORM</span><br>
+          <span>YOUR BODY</span><br>
+          <span class="text-gold">TODAY</span>
+        </h1>
+        <p class="hero-sub fade-in-up" style="animation-delay: 0.4s;">
+          Urapakkam's top-rated fitness studio. Expert trainers, premium equipment, real results for weight loss, muscle gain & total transformation.
+        </p>
+        <div class="hero-ctas fade-in-up" style="animation-delay: 0.6s;">
+          <a href="booking.html#book-trial" class="btn btn-gold btn-lg">🏋️ Book Free Trial</a>
+          <a href="membership.html#payment-section" class="btn btn-red btn-lg">Join Now</a>
+        </div>
+      </div>
+      
+      <div class="hero-stats-glass fade-in-up" style="animation-delay: 0.8s;">
+        <div class="glass-panel glass-floating-card">
+          <div class="hero-stat-num" data-target="500">0</div>
+          <div class="hero-stat-label">Members Transformed</div>
+        </div>
+        <div class="glass-panel glass-floating-card">
+          <div class="hero-stat-num" data-target="90">0</div>
+          <div class="hero-stat-label">5-Star Google Reviews</div>
+        </div>
+        <div class="glass-panel glass-floating-card">
+          <div class="hero-stat-num" data-target="5">0</div>
+          <div class="hero-stat-label">Expert Trainers</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">Scroll</div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why-us">
+    <div class="container">
+      <div class="text-center gs-reveal">
+        <div class="section-tag">Why Choose Us</div>
+        <h2 class="section-title">Everything You Need<br>To <span class="text-gold">Succeed</span></h2>
+        <p class="section-sub mx-auto">We're not just a gym. We're your transformation partner — with the tools, team, and culture to get you results.</p>
+      </div>
+      <div class="features-grid gs-stagger">
+        <div class="feature-card">
+          <div class="feature-icon">🏋️</div>
+          <h3>Premium Equipment</h3>
+          <p>State-of-the-art machines, free weights, and functional training zones — all maintained to the highest standards.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3>Expert Trainers</h3>
+          <p>Certified professionals who design personalized plans and push you to exceed your own limits safely.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔥</div>
+          <h3>Proven Results</h3>
+          <p>Hundreds of real transformations — weight loss, muscle gain, strength & endurance — backed by our 4.9-star rating.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⏰</div>
+          <h3>Flexible Timings</h3>
+          <p>Early morning to late evening sessions. Fit your workout into your schedule, not the other way around.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>Clean & Hygienic</h3>
+          <p>Spotlessly maintained facilities, sanitized equipment, and a motivating atmosphere reviewed by 90+ happy members.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📍</div>
+          <h3>Best Location</h3>
+          <p>Conveniently located in Urapakkam — easily accessible from Vandalur, Guduvanchery, and surrounding areas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS PREVIEW (BENTO GRID) -->
+  <section style="background:var(--black2)">
+    <div class="container">
+      <div class="text-center gs-reveal">
+        <div class="section-tag">Our Programs</div>
+        <h2 class="section-title">Train For Your <span class="text-gold">Goal</span></h2>
+        <p class="section-sub mx-auto">Whether you want to lose weight, build muscle, or improve overall fitness — we have the right program for you.</p>
+      </div>
+      
+      <div class="bento-grid gs-stagger">
+        <!-- Weight Loss (Large) -->
+        <a href="programs.html#weight-loss" class="bento-item bento-large">
+          <img src="img/transformation_1.png" alt="Weight Loss Program">
+          <div class="bento-overlay">
+            <h3 class="text-display-lg">Weight Loss</h3>
+            <p class="text-body-sm">Science-backed cardio and strength training to burn fat and reveal the best version of you.</p>
+          </div>
+        </a>
+        
+        <!-- Muscle Building -->
+        <a href="programs.html#muscle-building" class="bento-item">
+          <img src="img/hero_gym_model.png" alt="Muscle Building">
+          <div class="bento-overlay">
+            <h3 class="text-display-sm">Muscle Building</h3>
+            <p class="text-body-xs">Progressive overload programs.</p>
+          </div>
+        </a>
+
+        <!-- Women's Fitness -->
+        <a href="programs.html#womens-fitness" class="bento-item">
+          <img src="img/transformation_2.png" alt="Women's Fitness">
+          <div class="bento-overlay">
+            <h3 class="text-display-sm">Women's Fitness</h3>
+            <p class="text-body-xs">Empowering, safe, and motivating.</p>
+          </div>
+        </a>
+
+        <!-- Personal Training (Wide) -->
+        <a href="programs.html#personal-training" class="bento-item bento-wide">
+          <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Personal Training">
+          <div class="bento-overlay">
+            <h3 class="text-display-md">Personal Training</h3>
+            <p class="text-body-sm text-light">One-on-one sessions with dedicated trainers crafting plans exclusively around your goals.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="text-center gs-reveal mt-xl">
+        <a href="programs.html" class="btn btn-outline-gold btn-lg">View All Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINERS (LUXURY) -->
+  <section>
+    <div class="container">
+      <div class="text-center gs-reveal">
+        <div class="section-tag">Meet the Team</div>
+        <h2 class="section-title">Train With the <span class="text-gold">Best</span></h2>
+        <p class="section-sub mx-auto">Our certified trainers have transformed hundreds of bodies across Urapakkam and beyond.</p>
+      </div>
+      
+      <div class="two-col-grid gs-stagger mt-xl">
+        <div class="trainer-luxury-card">
+          <img src="img/trainer-venkat.png" alt="Venkat - Head Trainer">
+          <div class="trainer-badge">Head Trainer</div>
+          <div class="trainer-info-glass glass-panel">
+            <h3 class="text-display-md">Venkat</h3>
+            <p class="text-white-bold">Co-Founder & Transformation Expert</p>
+            <p class="text-body-xs" style="margin-top:0;">8+ years of bodybuilding & strength training expertise. Specializes in muscle gain and body recomposition programs.</p>
+          </div>
+        </div>
+        <div class="trainer-luxury-card">
+          <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Guna - Strength Coach">
+          <div class="trainer-badge">Strength Coach</div>
+          <div class="trainer-info-glass glass-panel">
+            <h3 class="text-display-md">Guna</h3>
+            <p class="text-white-bold">Strength & Conditioning</p>
+            <p class="text-body-xs" style="margin-top:0;">Certified strength coach with a passion for helping beginners build unshakeable foundations and confidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORMATION — STATIC BEFORE / AFTER -->
+  <section class="transform-section" aria-labelledby="transform-heading">
+    <div class="container">
+      <header class="text-center gs-reveal">
+        <div class="section-tag">Transformation Stories</div>
+        <h2 class="section-title" id="transform-heading">Real People, <span class="text-gold">Real Results</span></h2>
+        <p class="section-sub mx-auto">See the full transformation at a glance — before and after, side by side.</p>
+      </header>
+
+      <article class="transform-card gs-reveal mt-xl" aria-label="Arjun's 12-week transformation">
+        <div class="transform-card__visual">
+          <figure class="transform-panel transform-panel--before">
+            <span class="transform-panel__label">BEFORE • 85kg</span>
+            <img src="img/hero_gym_model.png" alt="Arjun before training — 85 kg" width="480" height="600" loading="lazy" decoding="async">
+          </figure>
+
+          <div class="transform-badge" aria-hidden="true">
+            <span class="transform-badge__delta">↓ 12kg</span>
+            <span class="transform-badge__time">12 Weeks</span>
+          </div>
+
+          <figure class="transform-panel transform-panel--after">
+            <span class="transform-panel__label transform-panel__label--after">AFTER • 73kg</span>
+            <img src="img/transformation_1.png" alt="Arjun after 12 weeks — 73 kg" width="480" height="600" loading="lazy" decoding="async">
+          </figure>
+        </div>
+
+        <footer class="transform-card__meta">
+          <p class="transform-card__client">Arjun, 29 <span class="transform-card__sep" aria-hidden="true">•</span> Software Engineer</p>
+          <p class="transform-card__quote">"I lost 12kg and finally built the muscle definition I've always wanted. Best decision I've ever made."</p>
+        </footer>
+      </article>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP PREVIEW (LUXURY) -->
+  <section>
+    <div class="container">
+      <div class="text-center gs-reveal">
+        <div class="section-tag">Membership Plans</div>
+        <h2 class="section-title">Invest In Your <span class="text-gold">Health</span></h2>
+        <p class="section-sub mx-auto">Flexible plans to suit every goal and budget. No hidden fees, no surprises.</p>
+      </div>
+      
+      <div class="pricing-grid gs-stagger mt-xl">
+        <div class="pricing-luxury">
+          <div class="pricing-plan">Monthly</div>
+          <div class="pricing-price"><span>₹</span>1,499</div>
+          <div class="pricing-period">per month</div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Full Gym Access</li>
+            <li><span class="check">✓</span> Group Classes</li>
+            <li><span class="check">✓</span> Locker Room</li>
+            <li><span class="check">✓</span> Trainer Support</li>
+          </ul>
+          <a href="membership.html#payment-section" class="btn btn-outline-gold btn-full">Get Started</a>
+        </div>
+        
+        <div class="pricing-luxury featured">
+          <div class="pricing-badge" style="position:absolute; top:16px; right:16px; background:var(--gold); color:var(--black); padding:4px 12px; border-radius:20px; font-size:11px; font-weight:800;">⭐ Best Value</div>
+          <div class="pricing-plan">Quarterly</div>
+          <div class="pricing-price" style="color:var(--gold);"><span>₹</span>3,499</div>
+          <div class="pricing-period">for 3 months · Save 22%</div>
+          <ul class="pricing-features">
+            <li><span class="check" style="color:var(--gold);">✓</span> Full Gym Access</li>
+            <li><span class="check" style="color:var(--gold);">✓</span> Group Classes</li>
+            <li><span class="check" style="color:var(--gold);">✓</span> Locker Room</li>
+            <li><span class="check" style="color:var(--gold);">✓</span> 1 PT Session/Month</li>
+            <li><span class="check" style="color:var(--gold);">✓</span> Diet Guidance</li>
+          </ul>
+          <a href="membership.html#payment-section" class="btn btn-gold btn-full">Get Started</a>
+        </div>
+        
+        <div class="pricing-luxury">
+          <div class="pricing-plan">Annual</div>
+          <div class="pricing-price"><span>₹</span>9,999</div>
+          <div class="pricing-period">per year · Save 44%</div>
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> Full Gym Access</li>
+            <li><span class="check">✓</span> Unlimited Classes</li>
+            <li><span class="check">✓</span> Priority Locker</li>
+            <li><span class="check">✓</span> 4 PT Sessions/Month</li>
+            <li><span class="check">✓</span> Full Diet Plan</li>
+            <li><span class="check">✓</span> Body Analysis</li>
+          </ul>
+          <a href="membership.html#payment-section" class="btn btn-outline-gold btn-full">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF / TESTIMONIALS — CRO -->
+  <section class="reviews-section" id="reviews" aria-labelledby="reviews-heading">
+    <div class="reviews-section__bg" aria-hidden="true"></div>
+    <div class="container reviews-shell">
+      <header class="reviews-header gs-reveal">
+        <div class="reviews-trust-pill" aria-label="4.9 out of 5 stars on Google">
+          <span class="reviews-trust-pill__g">G</span>
+          <span class="reviews-trust-pill__score">4.9</span>
+          <span class="reviews-trust-pill__stars" aria-hidden="true">★★★★★</span>
+          <span class="reviews-trust-pill__divider" aria-hidden="true"></span>
+          <span class="reviews-trust-pill__count"><strong>90+</strong> Google reviews</span>
+        </div>
+        <div class="section-tag">Social Proof</div>
+        <h2 class="section-title reviews-header__title" id="reviews-heading">Real Members. <span class="text-gold">Real Results.</span></h2>
+        <p class="reviews-header__sub">Don't take our word for it — hear from people who train at Urapakkam's top-rated studio and see the outcomes they achieved with expert coaching.</p>
+        <ul class="reviews-metrics" aria-label="Gym highlights">
+          <li><span class="reviews-metrics__val">4.9★</span><span class="reviews-metrics__lbl">Avg. rating</span></li>
+          <li><span class="reviews-metrics__val">90+</span><span class="reviews-metrics__lbl">Verified reviews</span></li>
+          <li><span class="reviews-metrics__val">500+</span><span class="reviews-metrics__lbl">Members trained</span></li>
+          <li><span class="reviews-metrics__val">#1</span><span class="reviews-metrics__lbl">In Urapakkam</span></li>
+        </ul>
+      </header>
+
+      <div class="reviews-layout">
+        <aside class="reviews-convert gs-reveal" aria-label="Start your journey">
+          <p class="reviews-convert__eyebrow">Ready to write your story?</p>
+          <h3 class="reviews-convert__title">Your transformation starts with one session.</h3>
+          <p class="reviews-convert__text">Book a free trial. Meet our coaches. Train in a space built for serious results — no pressure, no hidden fees.</p>
+          <div class="reviews-convert__ctas">
+            <a href="booking.html#book-trial" class="btn btn-gold btn-full">Book Free Trial</a>
+            <a href="membership.html#payment-section" class="btn btn-outline-gold btn-full">View Memberships</a>
+          </div>
+          <ul class="reviews-convert__trust">
+            <li>Expert certified trainers</li>
+            <li>Flexible 5 AM – 10 PM hours</li>
+            <li>Transparent pricing</li>
+            <li>Women's programs available</li>
+          </ul>
+        </aside>
+
+        <div class="reviews-stage gs-reveal">
+          <div id="reviews-carousel" class="reviews-carousel" aria-roledescription="carousel" aria-label="Member reviews" tabindex="0">
+            <div class="reviews-carousel__viewport">
+              <div class="reviews-carousel__track">
+                <article class="reviews-slide" role="group" aria-roledescription="slide" aria-label="Review 1 of 6">
+                  <header class="reviews-card__header">
+                    <div class="reviews-card__person">
+                      <div class="avatar avatar-as" aria-hidden="true">AS</div>
+                      <div>
+                        <h3 class="reviews-card__name">Arjun S.</h3>
+                        <p class="reviews-card__meta">Weight Loss · Urapakkam</p>
+                      </div>
+                    </div>
+                    <div class="reviews-card__rating" aria-label="5 out of 5 stars">★★★★★</div>
+                  </header>
+                  <p class="reviews-card__outcome"><span class="reviews-card__outcome-kicker">Result</span> 12 kg lost in 12 weeks</p>
+                  <blockquote class="reviews-card__quote">Best gym in the locality with the most supportive trainers I've ever worked with! Lost 12kg in 3 months. Forever grateful!</blockquote>
+                  <footer class="reviews-card__footer">
+                    <span class="reviews-card__verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Google verified member</span>
+                  </footer>
+                </article>
+                <article class="reviews-slide" role="group" aria-roledescription="slide" aria-label="Review 2 of 6">
+                  <header class="reviews-card__header">
+                    <div class="reviews-card__person">
+                      <div class="avatar avatar-mr" aria-hidden="true">MR</div>
+                      <div>
+                        <h3 class="reviews-card__name">Meena R.</h3>
+                        <p class="reviews-card__meta">Women's Program · Chennai</p>
+                      </div>
+                    </div>
+                    <div class="reviews-card__rating" aria-label="5 out of 5 stars">★★★★★</div>
+                  </header>
+                  <p class="reviews-card__outcome"><span class="reviews-card__outcome-kicker">Result</span> Full body transformation</p>
+                  <blockquote class="reviews-card__quote">Very clean and motivating atmosphere. Venkat sir's training techniques are world-class. My body has completely transformed!</blockquote>
+                  <footer class="reviews-card__footer">
+                    <span class="reviews-card__verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Google verified member</span>
+                  </footer>
+                </article>
+                <article class="reviews-slide" role="group" aria-roledescription="slide" aria-label="Review 3 of 6">
+                  <header class="reviews-card__header">
+                    <div class="reviews-card__person">
+                      <div class="avatar avatar-km" aria-hidden="true">KM</div>
+                      <div>
+                        <h3 class="reviews-card__name">Karthik M.</h3>
+                        <p class="reviews-card__meta">Strength Training · Urapakkam</p>
+                      </div>
+                    </div>
+                    <div class="reviews-card__rating" aria-label="5 out of 5 stars">★★★★★</div>
+                  </header>
+                  <p class="reviews-card__outcome"><span class="reviews-card__outcome-kicker">Result</span> Deadlifted bodyweight in 6 months</p>
+                  <blockquote class="reviews-card__quote">Joined for basic fitness and ended up deadlifting my body weight in 6 months. Equipment is top-notch and always available.</blockquote>
+                  <footer class="reviews-card__footer">
+                    <span class="reviews-card__verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Google verified member</span>
+                  </footer>
+                </article>
+                <article class="reviews-slide" role="group" aria-roledescription="slide" aria-label="Review 4 of 6">
+                  <header class="reviews-card__header">
+                    <div class="reviews-card__person">
+                      <div class="avatar avatar-dl" aria-hidden="true">DL</div>
+                      <div>
+                        <h3 class="reviews-card__name">Divya L.</h3>
+                        <p class="reviews-card__meta">Women's Fitness · Chennai</p>
+                      </div>
+                    </div>
+                    <div class="reviews-card__rating" aria-label="5 out of 5 stars">★★★★★</div>
+                  </header>
+                  <p class="reviews-card__outcome"><span class="reviews-card__outcome-kicker">Result</span> 8 months — still going strong</p>
+                  <blockquote class="reviews-card__quote">Priya ma'am makes every session feel safe and empowering. I've never stuck to a gym this long — already 8 months strong!</blockquote>
+                  <footer class="reviews-card__footer">
+                    <span class="reviews-card__verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Google verified member</span>
+                  </footer>
+                </article>
+                <article class="reviews-slide" role="group" aria-roledescription="slide" aria-label="Review 5 of 6">
+                  <header class="reviews-card__header">
+                    <div class="reviews-card__person">
+                      <div class="avatar avatar-sk" aria-hidden="true">SK</div>
+                      <div>
+                        <h3 class="reviews-card__name">Suresh K.</h3>
+                        <p class="reviews-card__meta">Rehab &amp; Recovery · Urapakkam</p>
+                      </div>
+                    </div>
+                    <div class="reviews-card__rating" aria-label="5 out of 5 stars">★★★★★</div>
+                  </header>
+                  <p class="reviews-card__outcome"><span class="reviews-card__outcome-kicker">Result</span> Shoulder pain resolved</p>
+                  <blockquote class="reviews-card__quote">Flexible timings, friendly staff, and honest pricing. My shoulder pain is gone after proper rehab-focused training here.</blockquote>
+                  <footer class="reviews-card__footer">
+                    <span class="reviews-card__verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Google verified member</span>
+                  </footer>
+                </article>
+                <article class="reviews-slide" role="group" aria-roledescription="slide" aria-label="Review 6 of 6">
+                  <header class="reviews-card__header">
+                    <div class="reviews-card__person">
+                      <div class="avatar avatar-ap" aria-hidden="true">AP</div>
+                      <div>
+                        <h3 class="reviews-card__name">Anitha P.</h3>
+                        <p class="reviews-card__meta">Annual Member · Chennai</p>
+                      </div>
+                    </div>
+                    <div class="reviews-card__rating" aria-label="5 out of 5 stars">★★★★★</div>
+                  </header>
+                  <p class="reviews-card__outcome"><span class="reviews-card__outcome-kicker">Result</span> 8 kg lost + lean muscle gained</p>
+                  <blockquote class="reviews-card__quote">Annual membership was the best investment. Diet guidance plus PT sessions helped me drop 8kg while gaining muscle.</blockquote>
+                  <footer class="reviews-card__footer">
+                    <span class="reviews-card__verified"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Google verified member</span>
+                  </footer>
+                </article>
+              </div>
+            </div>
+
+            <div class="reviews-dots" role="tablist" aria-label="Review pagination"></div>
+          </div>
+
+          <div class="reviews-mobile-cta">
+            <a href="booking.html#book-trial" class="btn btn-gold btn-full">Book Free Trial — Start Today</a>
+            <a href="https://g.page/r/7muscle" class="reviews-google-link" target="_blank" rel="noopener noreferrer">Read all reviews on Google →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION (SPLIT) -->
+  <section style="background:var(--black2); border-top:1px solid rgba(255,215,0,0.05); padding-bottom:0;">
+    <div class="container">
+      <div class="two-col-grid align-stretch">
+        <div class="py-lg gs-reveal">
+          <div class="section-tag">Contact Us</div>
+          <h2 class="section-title">Get In <span class="text-gold">Touch</span></h2>
+          <p class="section-sub">Have questions about our programs or memberships? Drop by our studio or give us a call. We're here to help you start your journey.</p>
+          <div class="mt-lg flex-column-gap">
+            <div class="glass-panel glass-panel p-md" style="display:flex; align-items:flex-start; gap:20px;">
+              <div style="font-size:28px; color:var(--gold);">📍</div>
+              <div>
+                <h4 class="text-display-xs">Location</h4>
+                <p class="text-body-md">Urapakkam<br>Chennai, Tamil Nadu</p>
+              </div>
+            </div>
+            <div class="glass-panel glass-panel p-md" style="display:flex; align-items:flex-start; gap:20px;">
+              <div style="font-size:28px; color:var(--gold);">📞</div>
+              <div>
+                <h4 class="text-display-xs">Phone & Email</h4>
+                <p class="text-body-md"><a href="tel:6382973619" style="color:var(--gold);">6382973619</a><br><a href="mailto:pradeepvishal007@gmail.com">pradeepvishal007@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="glass-panel glass-panel p-md" style="display:flex; align-items:flex-start; gap:20px;">
+              <div style="font-size:28px; color:var(--gold);">🕐</div>
+              <div>
+                <h4 class="text-display-xs">Hours</h4>
+                <p class="text-body-md">Mon - Sat: 5:00 AM - 10:00 PM<br>Sunday: Closed (Rest Day)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gs-reveal" style="background:var(--black); border:1px solid rgba(255,215,0,0.1); border-radius:var(--radius-lg) var(--radius-lg) 0 0; overflow:hidden; min-height:400px; position:relative;">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15556.76019553641!2d80.0592967!3d12.8315147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f7a46abf4ad9%3A0x6b63695276eab8e4!2sUrapakkam%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; position:absolute; inset:0; filter: grayscale(70%) contrast(120%) opacity(0.8);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="footer-luxury" style="background:var(--black); padding:80px 0 30px; border-top:1px solid rgba(255,215,0,0.1);">
+    <div class="footer-watermark">7 MUSCLE</div>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><img src="img/Fineshyt.png" alt="7 Muscle Fitness Logo" style="height:56px;width:auto">
+          </div>
+          <p class="footer-desc">Urapakkam's top-rated gym committed to transforming lives through fitness, discipline, and expert guidance.</p>
+          <div class="footer-social">
+            <a href="#" class="social-insta" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="IconChangeColor" height="20" width="20"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" fill="#ffffff"></path></svg></a>
+            <a href="#" class="social-fb" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" id="IconChangeColor" height="20" width="20"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></a>
+            <a href="#" class="social-wa whatsapp-link" title="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" id="IconChangeColor"> <path d="M23.328 19.177c-0.401-0.203-2.354-1.156-2.719-1.292-0.365-0.13-0.63-0.198-0.896 0.203-0.26 0.391-1.026 1.286-1.26 1.547s-0.464 0.281-0.859 0.104c-0.401-0.203-1.682-0.62-3.203-1.984-1.188-1.057-1.979-2.359-2.214-2.76-0.234-0.396-0.026-0.62 0.172-0.818 0.182-0.182 0.401-0.458 0.604-0.698 0.193-0.24 0.255-0.401 0.396-0.661 0.13-0.281 0.063-0.5-0.036-0.698s-0.896-2.161-1.229-2.943c-0.318-0.776-0.651-0.677-0.896-0.677-0.229-0.021-0.495-0.021-0.76-0.021s-0.698 0.099-1.063 0.479c-0.365 0.401-1.396 1.359-1.396 3.297 0 1.943 1.427 3.823 1.625 4.104 0.203 0.26 2.807 4.26 6.802 5.979 0.953 0.401 1.693 0.641 2.271 0.839 0.953 0.302 1.823 0.26 2.51 0.161 0.76-0.125 2.354-0.964 2.688-1.901 0.339-0.943 0.339-1.724 0.24-1.901-0.099-0.182-0.359-0.281-0.76-0.458zM16.083 29h-0.021c-2.365 0-4.703-0.641-6.745-1.839l-0.479-0.286-5 1.302 1.344-4.865-0.323-0.5c-1.318-2.099-2.021-4.521-2.021-7.010 0-7.26 5.943-13.182 13.255-13.182 3.542 0 6.865 1.38 9.365 3.88 2.5 2.479 3.88 5.802 3.88 9.323-0.010 7.255-5.948 13.177-13.25 13.177zM27.359 4.599c-3.042-2.938-7.042-4.599-11.297-4.599-8.776 0-15.922 7.115-15.927 15.859 0 2.792 0.729 5.516 2.125 7.927l-2.26 8.214 8.448-2.203c2.328 1.255 4.948 1.927 7.615 1.932h0.005c8.781 0 15.927-7.115 15.932-15.865 0-4.234-1.651-8.219-4.661-11.214z" fill="#ffffff"></path></svg></a>
+            <a href="https://g.page/r/7muscle" class="social-google" title="Google"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path></svg></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="booking.html#book-trial">Book Trial</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Programs</div>
+          <ul class="footer-links">
+            <li><a href="programs.html">Weight Loss</a></li>
+            <li><a href="programs.html">Muscle Building</a></li>
+            <li><a href="programs.html">Personal Training</a></li>
+            <li><a href="programs.html">Women's Fitness</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Legal</div>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Waiver Form</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom" style="margin-top:40px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-items:center;">
+        <div class="footer-copy" style="color:var(--gray); font-size:13px;">&copy; 2024 7 Muscle Fitness Studio. All rights reserved.</div>
+        <div style="font-size:13px;color:var(--gray)">Made with 🏋️ in Urapakkam, Chennai</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- STICKY FLOATING CTAs -->
+  <div class="sticky-cta">
+    <a href="https://wa.me/916382973619" class="whatsapp-btn social-wa whatsapp-link" title="Chat on WhatsApp" target="_blank">
+      <!-- WhatsApp SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="IconChangeColor"> <path d="M23.328 19.177c-0.401-0.203-2.354-1.156-2.719-1.292-0.365-0.13-0.63-0.198-0.896 0.203-0.26 0.391-1.026 1.286-1.26 1.547s-0.464 0.281-0.859 0.104c-0.401-0.203-1.682-0.62-3.203-1.984-1.188-1.057-1.979-2.359-2.214-2.76-0.234-0.396-0.026-0.62 0.172-0.818 0.182-0.182 0.401-0.458 0.604-0.698 0.193-0.24 0.255-0.401 0.396-0.661 0.13-0.281 0.063-0.5-0.036-0.698s-0.896-2.161-1.229-2.943c-0.318-0.776-0.651-0.677-0.896-0.677-0.229-0.021-0.495-0.021-0.76-0.021s-0.698 0.099-1.063 0.479c-0.365 0.401-1.396 1.359-1.396 3.297 0 1.943 1.427 3.823 1.625 4.104 0.203 0.26 2.807 4.26 6.802 5.979 0.953 0.401 1.693 0.641 2.271 0.839 0.953 0.302 1.823 0.26 2.51 0.161 0.76-0.125 2.354-0.964 2.688-1.901 0.339-0.943 0.339-1.724 0.24-1.901-0.099-0.182-0.359-0.281-0.76-0.458zM16.083 29h-0.021c-2.365 0-4.703-0.641-6.745-1.839l-0.479-0.286-5 1.302 1.344-4.865-0.323-0.5c-1.318-2.099-2.021-4.521-2.021-7.010 0-7.26 5.943-13.182 13.255-13.182 3.542 0 6.865 1.38 9.365 3.88 2.5 2.479 3.88 5.802 3.88 9.323-0.010 7.255-5.948 13.177-13.25 13.177zM27.359 4.599c-3.042-2.938-7.042-4.599-11.297-4.599-8.776 0-15.922 7.115-15.927 15.859 0 2.792 0.729 5.516 2.125 7.927l-2.26 8.214 8.448-2.203c2.328 1.255 4.948 1.927 7.615 1.932h0.005c8.781 0 15.927-7.115 15.932-15.865 0-4.234-1.651-8.219-4.661-11.214z" fill="#ffffff"></path></svg>
+    </a>
+    <a href="membership.html#payment-section" class="sticky-join-btn">Join Now</a>
+  </div>
+
+  <!-- End Main Content -->
+  </div>
+
+  <script src="js/supabase_v4.js?v=20260519a"></script>
+  <script src="js/loader.js?v=20260519a"></script>
+  <script src="js/gsap_animations.js?v=20260609"></script>
+  <script src="js/hero_graphics.js?v=20260519a"></script>
+  <script src="js/svg_icons.js?v=20260519a"></script>
+  <script src="js/app_v4.js?v=20260614"></script>
+</body>
+</html>

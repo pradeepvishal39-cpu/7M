@@ -1,0 +1,322 @@
+/* ============================================
+   LANDING GRAPHICS & GRADIENTS
+   7 Muscle Fitness Studio
+   ============================================ */
+
+/* ============================================
+   GRADIENT OVERLAYS
+   ============================================ */
+
+/* Hero section gradient background */
+.hero {
+  background: linear-gradient(135deg, #0A0A0A 0%, #1a1a1a 50%, #111111 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255, 59, 59, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Stats section gradient */
+.stats-section {
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.5) 0%, rgba(26, 26, 26, 0.8) 100%);
+  border-top: 1px solid rgba(255, 215, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+  position: relative;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 215, 0, 0.02) 2px,
+      rgba(255, 215, 0, 0.02) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 215, 0, 0.01) 2px,
+      rgba(255, 215, 0, 0.01) 4px
+    );
+  pointer-events: none;
+}
+
+/* Feature cards gradient backgrounds */
+.feature-card {
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.6) 0%, rgba(26, 26, 26, 0.4) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 59, 59, 0.03) 100%);
+  border-color: rgba(255, 215, 0, 0.2);
+}
+
+/* Program cards gradient */
+.program-card {
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.7) 0%, rgba(26, 26, 26, 0.5) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.08);
+}
+
+.program-card:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 59, 59, 0.04) 100%);
+  border-color: rgba(255, 215, 0, 0.15);
+}
+
+/* Pricing cards gradient */
+.pricing-card {
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.8) 0%, rgba(26, 26, 26, 0.6) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.pricing-card:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 59, 59, 0.05) 100%);
+  border-color: rgba(255, 215, 0, 0.2);
+}
+
+/* Trainer cards gradient */
+.trainer-card {
+  background: linear-gradient(135deg, rgba(17, 17, 17, 0.7) 0%, rgba(26, 26, 26, 0.5) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.08);
+}
+
+.trainer-card:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 59, 59, 0.04) 100%);
+  border-color: rgba(255, 215, 0, 0.15);
+}
+
+/* ============================================
+   SVG ICON STYLING
+   ============================================ */
+
+.feature-icon,
+.program-card-img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-icon,
+.program-card:hover .program-card-img {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+  transform: scale(1.1);
+}
+
+.feature-icon svg,
+.program-card-img svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.2));
+  transition: filter 0.4s ease;
+}
+
+.feature-card:hover .feature-icon svg,
+.program-card:hover .program-card-img svg {
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+}
+
+/* ============================================
+   SECTION BACKGROUNDS
+   ============================================ */
+
+/* Why Choose Us section */
+#why-us {
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(255, 215, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(255, 59, 59, 0.02) 0%, transparent 50%),
+    linear-gradient(180deg, #0A0A0A 0%, #111111 100%);
+  position: relative;
+}
+
+/* Programs section */
+.programs-grid {
+  position: relative;
+}
+
+.programs-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.02) 50%, transparent 100%),
+    linear-gradient(0deg, transparent 0%, rgba(255, 59, 59, 0.01) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================
+   COUNTDOWN SECTION GRAPHICS
+   ============================================ */
+
+.countdown-section {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 59, 59, 0.05) 100%);
+  border: 2px solid rgba(255, 215, 0, 0.1);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.1) 50%, transparent 100%);
+  animation: shimmer 4s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.countdown-unit {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 59, 59, 0.04) 100%);
+  border: 1px solid rgba(255, 215, 0, 0.15);
+  border-radius: 8px;
+  padding: 12px 8px;
+  transition: all 0.3s ease;
+}
+
+.countdown-unit:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 59, 59, 0.08) 100%);
+  border-color: rgba(255, 215, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   BUTTON GRADIENTS
+   ============================================ */
+
+.btn-gold {
+  background: linear-gradient(135deg, #FFD700 0%, #e6c200 100%);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #e6c200 0%, #FFD700 100%);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-red {
+  background: linear-gradient(135deg, #FF3B3B 0%, #e62e2e 100%);
+  box-shadow: 0 4px 15px rgba(255, 59, 59, 0.3);
+}
+
+.btn-red:hover {
+  background: linear-gradient(135deg, #e62e2e 0%, #FF3B3B 100%);
+  box-shadow: 0 8px 25px rgba(255, 59, 59, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, transparent 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: rgba(255, 215, 0, 0.6);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.02) 100%);
+}
+
+/* ============================================
+   ANIMATED BORDERS
+   ============================================ */
+
+.feature-card,
+.program-card,
+.trainer-card,
+.pricing-card {
+  position: relative;
+}
+
+.feature-card::after,
+.program-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 215, 0, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.feature-card:hover::after,
+.program-card:hover::after {
+  opacity: 1;
+  animation: shine 0.6s ease-in-out;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .feature-icon,
+  .program-card-img {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 12px;
+  }
+
+  .countdown-section {
+    border-radius: 8px;
+  }
+
+  .btn-gold,
+  .btn-red,
+  .btn-outline {
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+  }
+
+  .btn-gold:hover,
+  .btn-red:hover {
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  }
+}

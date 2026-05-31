@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | 7 Muscle Fitness Studio, Urapakkam</title>
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="512x512">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="384x384">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="256x256">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="128x128">
+  <link rel="icon" type="image/png" href="img/7navicon.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="img/7navicon.png" sizes="192x192">
+  <meta name="description" content="Meet the team behind Urapakkam's top-rated gym. Our story, our trainers, and our mission to transform lives through fitness.">
+  <link rel="stylesheet" href="css/styles.css?v=20260612">
+  <link rel="stylesheet" href="css/graphics.css?v=20260519a">
+  <link rel="stylesheet" href="css/loader.css?v=20260519a">
+  <link rel="stylesheet" href="css/luxury.css?v=20260531">
+  <link rel="stylesheet" href="css/mobile.css?v=20260601">
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <!-- GSAP Animation Library -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- PREMIUM GSAP LOADER -->
+<div id="gsap-loader">
+  <div class="loader-content">
+    <h1 class="loader-logo">7 MUSCLE</h1>
+    <p class="loader-tagline">Fitness Studio</p>
+    <div class="loader-progress">
+      <div class="loader-progress-bar"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT WRAPPER -->
+<div id="main-content">
+
+<div class="urgency-bar">
+  <span class="pulse-dot"></span>
+  🏆 JOIN URAPAKKAM'S TOP-RATED GYM — <a href="booking.html#book-trial" style="color:#fff;text-decoration:underline;font-weight:700">FREE TRIAL ENDS THIS WEEK →</a>
+</div>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="img/Fineshyt.png" alt="7 Muscle Fitness Logo"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="booking.html">Book Trial</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="booking.html#book-trial" class="btn btn-gold">Free Trial</a>
+    <a href="/login" data-auth-login class="btn btn-outline">Login</a>
+  </div>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="programs.html">Programs</a>
+  <a href="membership.html">Membership</a>
+  <a href="booking.html#book-trial">Book Free Trial</a>
+  <a href="/dashboard" data-auth-account">My Account</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="section-tag">Our Story</div>
+  <h1 class="section-title" style="margin-bottom: 24px;">Built From <span class="text-gold">Passion</span>,<br>Proven By <span class="text-red">Results</span></h1>
+  <p class="section-sub mx-auto max-w-600">From a dream of transforming Urapakkam's fitness culture to becoming the area's most trusted gym — this is our story.</p>
+</div>
+
+<!-- MISSION -->
+<section>
+  <div class="container">
+    <div class="two-col-grid" style="gap:64px; align-items:center;">
+      <div class="fade-in-up">
+        <div class="section-tag">Our Mission</div>
+        <h2 class="section-title">Discipline.<br>Dedication.<br><span class="text-gold">Transformation.</span></h2>
+        <p class="text-body-md mb-lg">
+          7 Muscle Fitness Studio was founded with one clear purpose: to give the people of Urapakkam access to world-class fitness training without having to travel far or spend a fortune.
+        </p>
+        <p class="text-body-md mb-lg">
+          We believe that every body is capable of transformation. With the right guidance, environment, and commitment, anyone — beginner or advanced — can achieve results they never thought possible.
+        </p>
+        <a href="booking.html" class="btn btn-gold">Start Your Journey</a>
+      </div>
+      <div class="fade-in-up" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:24px;">
+        <div class="glass-panel p-md" style="text-align:center;">
+          <div style="font-size:40px;margin-bottom:8px">🏆</div>
+          <div class="hero-stat-num text-gold" style="font-size:36px">4.9</div>
+          <div class="hero-stat-label" style="margin-top:4px">Star Rating</div>
+        </div>
+        <div class="glass-panel p-md" style="text-align:center;">
+          <div style="font-size:40px;margin-bottom:8px">👥</div>
+          <div class="hero-stat-num text-gold" style="font-size:36px">500+</div>
+          <div class="hero-stat-label" style="margin-top:4px">Members</div>
+        </div>
+        <div class="glass-panel p-md" style="text-align:center;">
+          <div style="font-size:40px;margin-bottom:8px">⭐</div>
+          <div class="hero-stat-num text-gold" style="font-size:36px">90+</div>
+          <div class="hero-stat-label" style="margin-top:4px">Reviews</div>
+        </div>
+        <div class="glass-panel p-md" style="text-align:center;">
+          <div style="font-size:40px;margin-bottom:8px">🎯</div>
+          <div class="hero-stat-num text-gold" style="font-size:36px">3+</div>
+          <div class="hero-stat-label" style="margin-top:4px">Years Strong</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section style="background:var(--black2)">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Our Values</div>
+      <h2 class="section-title">What We Stand <span class="text-gold">For</span></h2>
+    </div>
+    <div class="features-grid mt-lg">
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">🔥</div>
+        <h3>Results First</h3>
+        <p>Every program, every session, every rep — designed with your results in mind. We measure success by your transformation.</p>
+      </div>
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">🤝</div>
+        <h3>Community</h3>
+        <p>We're more than a gym — we're a family. The support and energy from our members and trainers is what makes 7 Muscle special.</p>
+      </div>
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">📚</div>
+        <h3>Education</h3>
+        <p>We don't just train you — we teach you. Understand your body, nutrition, and recovery so you succeed for life.</p>
+      </div>
+      <div class="feature-card fade-in-up">
+        <div class="feature-icon">💎</div>
+        <h3>Excellence</h3>
+        <p>From the equipment we maintain to the programs we design — we never compromise on quality. Mediocrity has no place here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINERS -->
+<section>
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Our Trainers</div>
+      <h2 class="section-title mb-lg">The Experts Behind<br>Your <span class="text-gold">Success</span></h2>
+      <p class="section-sub mx-auto">Certified, experienced, and genuinely invested in your progress. Meet the team that will transform your body and mindset.</p>
+    </div>
+    <div class="trainers-grid">
+      <div class="trainer-card fade-in-up">
+        <div class="trainer-avatar">V</div>
+        <div class="trainer-name">Venkat</div>
+        <div class="trainer-role">Head Trainer & Co-Founder</div>
+        <p class="trainer-bio">8+ years in competitive bodybuilding and personal training. Venkat's approach combines scientific programming with motivational coaching to deliver extraordinary results. He has personally helped 200+ members transform their physiques.</p>
+      </div>
+      <div class="trainer-card fade-in-up">
+        <div class="trainer-avatar">G</div>
+        <div class="trainer-name">Guna</div>
+        <div class="trainer-role">Strength & Conditioning Coach</div>
+        <p class="trainer-bio">Certified strength coach with specialization in powerlifting and functional training. Guna has a gift for breaking down complex movements and helping beginners build real, lasting strength safely and effectively.</p>
+      </div>
+      <div class="trainer-card fade-in-up">
+        <div class="trainer-avatar">P</div>
+        <div class="trainer-name">Priya</div>
+        <div class="trainer-role">Women's Fitness Specialist</div>
+        <p class="trainer-bio">A passionate advocate for women's health and fitness. Priya creates empowering, results-driven programs in a supportive environment where women feel confident to train hard and grow stronger.</p>
+      </div>
+      <div class="trainer-card fade-in-up">
+        <div class="trainer-avatar">R</div>
+        <div class="trainer-name">Raj</div>
+        <div class="trainer-role">Nutrition & Cardio Coach</div>
+        <p class="trainer-bio">Combines evidence-based nutrition guidance with smart cardio programming. Raj's holistic approach ensures you're fueling your body right while maximizing fat loss and cardiovascular health.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section style="background:var(--black2)">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Our Facilities</div>
+      <h2 class="section-title">Built For <span class="text-gold">Champions</span></h2>
+      <p class="section-sub mx-auto">Every piece of equipment, every corner of our gym is designed to support your best performance.</p>
+    </div>
+    <div class="features-grid mt-lg">
+      <div class="feature-card fade-in-up"><div class="feature-icon">🏋️</div><h3>Free Weights Zone</h3><p>Complete range of dumbbells, barbells, EZ bars and plates — everything you need for serious strength training.</p></div>
+      <div class="feature-card fade-in-up"><div class="feature-icon">⚙️</div><h3>Cable & Machine Area</h3><p>Full line of cable machines, cable crossovers, and resistance machines for targeted muscle isolation.</p></div>
+      <div class="feature-card fade-in-up"><div class="feature-icon">🚴</div><h3>Cardio Zone</h3><p>Treadmills, ellipticals, stationary bikes, and rowing machines for all your cardio and fat-burning needs.</p></div>
+      <div class="feature-card fade-in-up"><div class="feature-icon">🧘</div><h3>Functional Training Area</h3><p>Dedicated space for kettlebells, TRX, battle ropes, and functional movement training.</p></div>
+      <div class="feature-card fade-in-up"><div class="feature-icon">🚿</div><h3>Clean Locker Rooms</h3><p>Spotlessly maintained changing facilities and lockers — reviewed as one of the cleanest in the area.</p></div>
+      <div class="feature-card fade-in-up"><div class="feature-icon">💧</div><h3>Hydration Station</h3><p>Always-stocked water station and supplement counter to keep you fueled through every session.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="text-align:center">
+  <div class="container">
+    <div class="section-tag">Join the Family</div>
+    <h2 class="section-title">Ready To Write Your<br><span class="text-gold">Success Story?</span></h2>
+    <p class="section-sub mx-auto mt-md mb-lg">Come experience what 90+ members are raving about. Your first session is completely free.</p>
+    <a href="booking.html#book-trial" class="btn btn-gold btn-lg">Book Your Free Trial</a>
+  </div>
+</section>
+
+<!-- LUXURY FOOTER -->
+  <footer class="footer-luxury" style="background:var(--black); padding:80px 0 30px; border-top:1px solid rgba(255,215,0,0.1);">
+    <div class="footer-watermark">7 MUSCLE</div>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><img src="img/Fineshyt.png" alt="7 Muscle Fitness Logo" style="height:56px;width:auto">
+          </div>
+          <p class="footer-desc">Urapakkam's top-rated gym committed to transforming lives through fitness, discipline, and expert guidance.</p>
+          <div class="footer-social">
+            <a href="#" class="social-insta" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="IconChangeColor" height="20" width="20"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" fill="#ffffff"></path></svg></a>
+            <a href="#" class="social-fb" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" id="IconChangeColor" height="20" width="20"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg></a>
+            <a href="#" class="social-wa whatsapp-link" title="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" id="IconChangeColor"> <path d="M23.328 19.177c-0.401-0.203-2.354-1.156-2.719-1.292-0.365-0.13-0.63-0.198-0.896 0.203-0.26 0.391-1.026 1.286-1.26 1.547s-0.464 0.281-0.859 0.104c-0.401-0.203-1.682-0.62-3.203-1.984-1.188-1.057-1.979-2.359-2.214-2.76-0.234-0.396-0.026-0.62 0.172-0.818 0.182-0.182 0.401-0.458 0.604-0.698 0.193-0.24 0.255-0.401 0.396-0.661 0.13-0.281 0.063-0.5-0.036-0.698s-0.896-2.161-1.229-2.943c-0.318-0.776-0.651-0.677-0.896-0.677-0.229-0.021-0.495-0.021-0.76-0.021s-0.698 0.099-1.063 0.479c-0.365 0.401-1.396 1.359-1.396 3.297 0 1.943 1.427 3.823 1.625 4.104 0.203 0.26 2.807 4.26 6.802 5.979 0.953 0.401 1.693 0.641 2.271 0.839 0.953 0.302 1.823 0.26 2.51 0.161 0.76-0.125 2.354-0.964 2.688-1.901 0.339-0.943 0.339-1.724 0.24-1.901-0.099-0.182-0.359-0.281-0.76-0.458zM16.083 29h-0.021c-2.365 0-4.703-0.641-6.745-1.839l-0.479-0.286-5 1.302 1.344-4.865-0.323-0.5c-1.318-2.099-2.021-4.521-2.021-7.010 0-7.26 5.943-13.182 13.255-13.182 3.542 0 6.865 1.38 9.365 3.88 2.5 2.479 3.88 5.802 3.88 9.323-0.010 7.255-5.948 13.177-13.25 13.177zM27.359 4.599c-3.042-2.938-7.042-4.599-11.297-4.599-8.776 0-15.922 7.115-15.927 15.859 0 2.792 0.729 5.516 2.125 7.927l-2.26 8.214 8.448-2.203c2.328 1.255 4.948 1.927 7.615 1.932h0.005c8.781 0 15.927-7.115 15.932-15.865 0-4.234-1.651-8.219-4.661-11.214z" fill="#ffffff"></path></svg></a>
+            <a href="https://g.page/r/7muscle" class="social-google" title="Google"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path></svg></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="booking.html#book-trial">Book Trial</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Programs</div>
+          <ul class="footer-links">
+            <li><a href="programs.html">Weight Loss</a></li>
+            <li><a href="programs.html">Muscle Building</a></li>
+            <li><a href="programs.html">Personal Training</a></li>
+            <li><a href="programs.html">Women's Fitness</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Legal</div>
+          <ul class="footer-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Refund Policy</a></li>
+            <li><a href="#">Waiver Form</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom" style="margin-top:40px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-items:center;">
+        <div class="footer-copy" style="color:var(--gray); font-size:13px;">&copy; 2024 7 Muscle Fitness Studio. All rights reserved.</div>
+        <div style="font-size:13px;color:var(--gray)">Made with 🏋️ in Urapakkam, Chennai</div>
+      </div>
+    </div>
+  </footer>
+
+<div class="sticky-cta">
+  <a href="#" class="whatsapp-btn social-wa whatsapp-link" title="Chat on WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="IconChangeColor"> <path d="M23.328 19.177c-0.401-0.203-2.354-1.156-2.719-1.292-0.365-0.13-0.63-0.198-0.896 0.203-0.26 0.391-1.026 1.286-1.26 1.547s-0.464 0.281-0.859 0.104c-0.401-0.203-1.682-0.62-3.203-1.984-1.188-1.057-1.979-2.359-2.214-2.76-0.234-0.396-0.026-0.62 0.172-0.818 0.182-0.182 0.401-0.458 0.604-0.698 0.193-0.24 0.255-0.401 0.396-0.661 0.13-0.281 0.063-0.5-0.036-0.698s-0.896-2.161-1.229-2.943c-0.318-0.776-0.651-0.677-0.896-0.677-0.229-0.021-0.495-0.021-0.76-0.021s-0.698 0.099-1.063 0.479c-0.365 0.401-1.396 1.359-1.396 3.297 0 1.943 1.427 3.823 1.625 4.104 0.203 0.26 2.807 4.26 6.802 5.979 0.953 0.401 1.693 0.641 2.271 0.839 0.953 0.302 1.823 0.26 2.51 0.161 0.76-0.125 2.354-0.964 2.688-1.901 0.339-0.943 0.339-1.724 0.24-1.901-0.099-0.182-0.359-0.281-0.76-0.458zM16.083 29h-0.021c-2.365 0-4.703-0.641-6.745-1.839l-0.479-0.286-5 1.302 1.344-4.865-0.323-0.5c-1.318-2.099-2.021-4.521-2.021-7.010 0-7.26 5.943-13.182 13.255-13.182 3.542 0 6.865 1.38 9.365 3.88 2.5 2.479 3.88 5.802 3.88 9.323-0.010 7.255-5.948 13.177-13.25 13.177zM27.359 4.599c-3.042-2.938-7.042-4.599-11.297-4.599-8.776 0-15.922 7.115-15.927 15.859 0 2.792 0.729 5.516 2.125 7.927l-2.26 8.214 8.448-2.203c2.328 1.255 4.948 1.927 7.615 1.932h0.005c8.781 0 15.927-7.115 15.932-15.865 0-4.234-1.651-8.219-4.661-11.214z" id="mainIconPathAttribute" fill="#ffffff" filter="url(#shadow)"></path> <filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter><filter id="shadow"><feDropShadow id="shadowValue" stdDeviation=".5" dx="0" dy="0" flood-color="black"></feDropShadow></filter></svg></a>
+  <a href="membership.html#payment-section" class="sticky-join-btn" style="background:var(--red);color:var(--white)">Join Now</a>
+</div>
+
+<div id="exit-popup-overlay" class="exit-popup-overlay">
+  <div class="exit-popup">
+    <button class="exit-popup-close">✕</button>
+    <div style="font-size:48px;margin-bottom:12px">💪</div>
+    <h2>WAIT!</h2>
+    <p>Get a <strong style="color:var(--gold)">FREE trial session</strong> — no commitment required!</p>
+    <a href="booking.html#book-trial" class="btn btn-gold btn-full btn-lg" style="margin-bottom:12px">Book Free Trial</a>
+    <button onclick="document.getElementById('exit-popup-overlay').classList.remove('show')" style="background:none;color:var(--gray);font-size:13px;width:100%;padding:8px">No thanks</button>
+  </div>
+</div>
+
+<!-- End Main Content -->
+</div>
+
+<script src="js/supabase_v4.js?v=20260519a"></script>
+<script src="js/loader.js?v=20260519a"></script>
+<script src="js/gsap_animations.js?v=20260519a"></script>
+<script src="js/hero_graphics.js?v=20260519a"></script>
+<script src="js/svg_icons.js?v=20260519a"></script>
+<script src="js/app_v4.js?v=20260614"></script>
+</body>
+</html>
