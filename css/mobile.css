@@ -10,8 +10,8 @@
 
   body,
   #main-content {
-    overflow-x: hidden;
-    max-width: 100vw;
+    overflow-x: clip;
+    max-width: 100%;
   }
 
   .container {
@@ -20,7 +20,8 @@
   }
 
   section {
-    padding: 56px 0;
+    padding-block: clamp(36px, 8vw, 52px);
+    padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right));
   }
 
   section > .container {
@@ -38,8 +39,8 @@
 
   /* —— Immersive hero —— */
   .hero-immersive {
-    min-height: 100svh;
-    padding: 0 16px 48px;
+    min-height: auto;
+    padding: 0 max(16px, env(safe-area-inset-left)) 28px max(16px, env(safe-area-inset-right));
     align-items: flex-start;
   }
 
@@ -58,8 +59,8 @@
 
   .hero-immersive-content {
     grid-template-columns: 1fr !important;
-    gap: 28px;
-    padding-top: calc(var(--site-header-h, 112px) + 12px);
+    gap: 20px;
+    padding-top: calc(var(--site-header-h, 64px) + env(safe-area-inset-top, 0px) + 8px);
     text-align: center;
   }
 
@@ -88,7 +89,9 @@
   .hero-ctas .btn {
     width: 100%;
     justify-content: center;
-    padding: 16px 20px;
+    padding: 11px 16px;
+    min-height: 44px;
+    font-size: 12px;
   }
 
   .hero-stats-glass {
@@ -101,13 +104,13 @@
 
   /* —— Bento programs —— */
   .bento-grid {
-    margin-top: 32px;
-    gap: 16px;
-    grid-auto-rows: minmax(220px, auto);
+    margin-top: 24px;
+    gap: 12px;
+    grid-auto-rows: minmax(168px, auto);
   }
 
   .bento-item {
-    min-height: 220px;
+    min-height: 168px;
   }
 
   /* —— Trainers: stack, always show info (no hover on touch) —— */
@@ -128,7 +131,7 @@
     max-width: none !important;
     transform: none !important;
     opacity: 1 !important;
-    height: clamp(320px, 70vw, 400px);
+    height: clamp(240px, 52vw, 320px);
     scroll-snap-align: none;
   }
 
@@ -247,21 +250,48 @@
 
   /* —— Sticky CTAs + safe area —— */
   .sticky-cta {
-    bottom: max(14px, env(safe-area-inset-bottom));
-    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    right: max(10px, env(safe-area-inset-right));
+    gap: 8px;
+  }
+
+  .whatsapp-btn {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .sticky-join-btn {
+    font-size: 10px;
+    padding: 8px 14px;
+    border-radius: 22px;
+    animation: none;
   }
 
   /* —— Buttons touch targets —— */
   .btn {
-    min-height: 48px;
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+
+  .btn-lg {
+    padding: 12px 20px;
+    font-size: 13px;
   }
 
   /* —— Page heroes (inner pages) —— */
   .page-hero,
   section.hero-immersive[style*="min-height"] {
     min-height: auto !important;
-    padding-top: 96px !important;
-    padding-bottom: 48px !important;
+    padding-top: calc(var(--site-header-h, 64px) + env(safe-area-inset-top, 0px) + 12px) !important;
+    padding-bottom: 28px !important;
   }
 
   /* —— Programs detail —— */
@@ -342,8 +372,8 @@
   }
 
   .sticky-cta .whatsapp-btn {
-    width: 52px;
-    height: 52px;
+    width: 44px;
+    height: 44px;
   }
 }
 
@@ -515,7 +545,7 @@
   .trainers-grid,
   .testimonials-grid,
   .pricing-grid {
-    max-width: 100vw;
+    max-width: 100%;
   }
 
   /* Reviews section */
@@ -570,8 +600,8 @@
 
   /* Contact + map split */
   .two-col-grid.align-stretch > div:last-child {
-    min-height: 260px !important;
-    height: clamp(260px, 52vw, 360px);
+    min-height: clamp(220px, 48vw, 280px) !important;
+    height: clamp(220px, 48vw, 280px);
     border-radius: var(--radius-lg) !important;
     margin-top: 8px;
   }
@@ -608,8 +638,8 @@
   }
 
   .whatsapp-btn {
-    min-width: 48px;
-    min-height: 48px;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   /* Forms — iOS zoom prevention + tap-friendly */
@@ -632,7 +662,8 @@
 
   /* Auth pages */
   .auth-wrap {
-    padding: calc(var(--site-header-h, 72px) + 24px) 16px 32px;
+    padding: calc(var(--site-header-h, 64px) + env(safe-area-inset-top, 0px) + 16px) 16px max(24px, env(safe-area-inset-bottom));
+    min-height: 100dvh;
     min-height: 100svh;
   }
 
@@ -805,7 +836,15 @@
 
     footer.footer-luxury,
     footer {
-      padding-bottom: max(160px, calc(120px + env(safe-area-inset-bottom))) !important;
+      padding-bottom: max(28px, env(safe-area-inset-bottom)) !important;
+    }
+
+    #main-content {
+      padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    }
+
+    html {
+      scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
     }
   }
 }
@@ -818,4 +857,272 @@
     transition-duration: 0.01ms !important;
     animation: none !important;
   }
+}
+
+/* ============================================
+   MOBILE LAYOUT FIX — v20260531
+   Targets: tall sections, overflow, FAB overlap,
+   inline styles, luxury typography, safe areas
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --fluid-h1: clamp(1.65rem, 7.5vw, 2.35rem);
+    --fluid-h2: clamp(1.35rem, 5.5vw, 1.85rem);
+  }
+
+  /* Top chrome + notch — keep urgency bar below system UI */
+  .urgency-bar {
+    padding-top: calc(8px + env(safe-area-inset-top, 0px));
+  }
+
+  /* Legacy hero + page hero — content height, not viewport locked */
+  .hero {
+    min-height: auto !important;
+    padding: calc(var(--site-header-h, 64px) + env(safe-area-inset-top, 0px) + 8px) 16px 28px !important;
+  }
+
+  .page-hero {
+    padding: calc(var(--site-header-h, 64px) + env(safe-area-inset-top, 0px) + 12px) 16px 28px !important;
+  }
+
+  /* Inline section padding on programs / membership pages */
+  section[style*="padding: 120px 0"],
+  section[style*="padding:120px 0"],
+  section[style*="padding: 100px 0"],
+  section[style*="padding:100px 0"],
+  section[style*="padding: 80px 0"],
+  section[style*="padding:80px 0"] {
+    padding-block: clamp(36px, 8vw, 52px) !important;
+  }
+
+  section[style*="padding:40px 0"],
+  section[style*="padding: 40px 0"] {
+    padding-block: clamp(28px, 6vw, 40px) !important;
+  }
+
+  /* Footer — override styles.css 160px bottom pad + inline styles */
+  footer,
+  footer.footer-luxury,
+  footer.footer-luxury[style*="padding"] {
+    padding: clamp(36px, 8vw, 48px) max(16px, env(safe-area-inset-right)) max(28px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)) !important;
+  }
+
+  /* Programs: shrink fixed 600px images */
+  img[style*="height:600px"],
+  img[style*="height: 600px"],
+  .program-image-luxury {
+    height: clamp(200px, 48vw, 300px) !important;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  /* Programs: floating stat cards — stack below image, no negative offset */
+  .glass-floating-card {
+    position: relative !important;
+    inset: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 12px;
+    animation: none;
+  }
+
+  /* Programs: hide oversized decorative blobs that cause overflow */
+  section[style*="overflow:hidden"] > div[style*="width:800px"],
+  section[style*="overflow: hidden"] > div[style*="width:800px"] {
+    display: none !important;
+  }
+
+  /* Programs: reduce large column gaps */
+  .two-col-grid[style*="gap:80px"],
+  .two-col-grid[style*="gap: 80px"] {
+    gap: 24px !important;
+  }
+
+  /* Contact map inline min-height */
+  div[style*="min-height:400px"],
+  div[style*="min-height: 400px"] {
+    min-height: clamp(220px, 48vw, 280px) !important;
+    height: clamp(220px, 48vw, 280px) !important;
+  }
+
+  /* Transformation panels — slightly shorter */
+  .transform-panel {
+    aspect-ratio: 4 / 5;
+  }
+
+  /* Stats + countdown — tighter vertical rhythm */
+  .stats-section {
+    padding-block: clamp(28px, 6vw, 40px);
+  }
+
+  .countdown-section {
+    padding: 20px 16px !important;
+    margin-block: 24px;
+  }
+
+  .countdown-title {
+    font-size: clamp(1.125rem, 5vw, 1.375rem);
+  }
+
+  .countdown-num {
+    font-size: clamp(1.375rem, 6vw, 1.75rem);
+  }
+
+  /* Pricing cards — less internal padding */
+  .pricing-luxury {
+    padding: 24px 18px !important;
+  }
+
+  .pricing-luxury .pricing-price {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  /* Admin / dashboard inline grids */
+  .dashboard-content div[style*="grid-template-columns:1fr 1fr"],
+  .dashboard-content div[style*="grid-template-columns: 1fr 1fr"],
+  .dashboard-content div[style*="grid-template-columns:repeat(3,1fr)"],
+  .dashboard-content div[style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Card sliders — contain bleed without page scroll */
+  .features-grid,
+  .programs-grid,
+  .trainers-grid,
+  .testimonials-grid,
+  .pricing-grid {
+    margin-inline: -16px;
+    padding-inline: 16px;
+    max-width: calc(100% + 32px);
+  }
+
+  /* Utility spacing */
+  .py-lg {
+    padding-block: clamp(28px, 6vw, 40px) !important;
+  }
+
+  .mt-xl {
+    margin-top: clamp(28px, 6vw, 40px);
+  }
+
+  .mt-lg {
+    margin-top: clamp(24px, 5vw, 36px);
+  }
+}
+
+@media (max-width: 768px) and (min-width: 391px) {
+  /* Admin overview cards: 2-up on larger phones */
+  .dashboard-content div[style*="grid-template-columns:1fr 1fr"],
+  .dashboard-content div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .dashboard-content div[style*="grid-template-columns:1fr 1fr"],
+  .dashboard-content div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================
+   MOBILE LAYOUT FIXES (USER REQS)
+   ============================================ */
+.hero-section,
+.hero-immersive,
+.page-hero {
+  padding-top: calc(60px + env(safe-area-inset-top)) !important;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav-links,
+  .nav-links,
+  .nav-cta {
+    display: none !important;
+  }
+  
+  .mobile-menu,
+  .mobile-nav {
+    display: flex !important;
+  }
+
+  .programs-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 12px !important;
+    padding-bottom: 12px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .program-card {
+    min-width: 240px !important;
+    scroll-snap-align: start !important;
+    flex-shrink: 0 !important;
+  }
+
+  .pricing-grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 16px !important;
+    padding: 0 16px 16px !important;
+  }
+  
+  .pricing-card,
+  .pricing-luxury {
+    min-width: 240px !important;
+    scroll-snap-align: center !important;
+  }
+  
+  .popular-badge,
+  .pricing-badge,
+  .pricing-badge-luxury {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+  }
+
+  .reviews-grid,
+  .testimonials-grid,
+  .reviews-carousel__viewport {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .review-card,
+  .testimonial-card,
+  .reviews-slide {
+    min-width: calc(100vw - 48px) !important;
+    scroll-snap-align: center !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+.whatsapp-float,
+.sticky-cta {
+  bottom: calc(24px + env(safe-area-inset-bottom)) !important;
+  right: 20px !important;
+  z-index: 9999 !important;
+  position: fixed !important;
+}
+
+.trainer-img,
+.trainer-luxury-card img {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  border-radius: 12px !important;
 }

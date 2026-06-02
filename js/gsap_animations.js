@@ -2,11 +2,9 @@
 // LUXURY GSAP ANIMATIONS & SLIDERS
 // ============================================
 
-window.addEventListener('load', () => {
-  if (typeof gsap === 'undefined') {
-    console.warn('GSAP not available');
-    return;
-  }
+function initAllAnimations() {
+  if (window.gsapAnimationsInitialized) return;
+  window.gsapAnimationsInitialized = true;
 
   try {
     if (typeof ScrollTrigger !== 'undefined') {
@@ -153,6 +151,22 @@ window.addEventListener('load', () => {
     console.log('✅ Premium GSAP animations initialized');
   } catch (error) {
     console.warn('GSAP animation error:', error.message);
+  }
+}
+
+window.addEventListener('load', () => {
+  if (typeof gsap === 'undefined') {
+    console.warn('GSAP not available');
+    return;
+  }
+
+  const loader = document.getElementById('gsap-loader');
+  const loaderVisible = loader && window.getComputedStyle(loader).display !== 'none';
+
+  if (!loaderVisible || sessionStorage.getItem('7muscle-loader-shown') === 'true') {
+    initAllAnimations();
+  } else {
+    document.addEventListener('loaderComplete', initAllAnimations);
   }
 });
 

@@ -332,17 +332,37 @@ function animateCounter(el, target, duration = 1500) {
 }
 
 function initCounters() {
+  const runAnimation = (el) => {
+    let target = parseInt(el.dataset.target, 10);
+    if (isNaN(target)) {
+      target = parseInt(el.textContent.replace(/[^0-9]/g, ''), 10);
+    }
+    if (!isNaN(target)) {
+      animateCounter(el, target);
+    }
+  };
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const target = parseInt(entry.target.dataset.target);
-        if (!isNaN(target)) animateCounter(entry.target, target);
+        const loader = document.getElementById('gsap-loader');
+        const loaderVisible = loader && window.getComputedStyle(loader).display !== 'none';
+        
+        if (loaderVisible) {
+          const onLoaderComplete = () => {
+            runAnimation(entry.target);
+            document.removeEventListener('loaderComplete', onLoaderComplete);
+          };
+          document.addEventListener('loaderComplete', onLoaderComplete);
+        } else {
+          runAnimation(entry.target);
+        }
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.5 });
 
-  document.querySelectorAll('[data-target]').forEach(el => observer.observe(el));
+  document.querySelectorAll('[data-target], .stat-number').forEach(el => observer.observe(el));
 }
 
 // ============================================
@@ -495,7 +515,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initExitPopup();
   initWhatsApp();
-  initCounters();
+  if (typeof gsap === 'undefined') {
+    initCounters();
+  }
   initBookingForm();
   initMobileSliders();
 

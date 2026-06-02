@@ -65,7 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
         // Initialize scroll animations after a brief delay
-        setTimeout(() => initScrollAnimations(), 100);
+        setTimeout(() => {
+          initScrollAnimations();
+          document.dispatchEvent(new CustomEvent('loaderComplete'));
+        }, 100);
       }
     });
 
@@ -180,6 +183,8 @@ function completeLoaderAnimation() {
   initScrollAnimations();
   document.querySelectorAll('.fade-in-up').forEach((element) => element.classList.add('visible'));
 
+  // Dispatch loaderComplete event
+  document.dispatchEvent(new CustomEvent('loaderComplete'));
 }
 
 // Prevent scroll during loader animation
