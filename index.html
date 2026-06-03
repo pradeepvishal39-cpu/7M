@@ -18,7 +18,10 @@
   <link rel="stylesheet" href="css/graphics.css?v=20260519a">
   <link rel="stylesheet" href="css/loader.css?v=20260519a">
   <link rel="stylesheet" href="css/luxury.css?v=20260611"> <!-- NEW LUXURY STYLES -->
-  <link rel="stylesheet" href="css/mobile.css?v=20260531">
+  <link rel="stylesheet" href="css/mobile.css?v=20260613">
+  
+  <!-- Preload Critical Hero Assets -->
+  <link rel="preload" as="image" href="img/hero-bg.png">
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
   <!-- GSAP Animation Library -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
@@ -71,7 +74,7 @@
     <a href="programs.html">Programs</a>
     <a href="membership.html">Membership</a>
     <a href="booking.html">Book Free Trial</a>
-    <a href="/dashboard" data-auth-account">My Account</a>
+    <a href="/dashboard" data-auth-account>My Account</a>
   </div>
 
   <!-- IMMERSIVE HERO -->
@@ -305,7 +308,7 @@
         </div>
         
         <div class="pricing-luxury featured">
-          <div class="pricing-badge" style="position:absolute; top:16px; right:16px; background:var(--gold); color:var(--black); padding:4px 12px; border-radius:20px; font-size:11px; font-weight:800;">⭐ Best Value</div>
+          <div class="pricing-badge-luxury">⭐ Best Value</div>
           <div class="pricing-plan">Quarterly</div>
           <div class="pricing-price" style="color:var(--gold);"><span>₹</span>3,499</div>
           <div class="pricing-period">for 3 months · Save 22%</div>
@@ -507,21 +510,21 @@
           <h2 class="section-title">Get In <span class="text-gold">Touch</span></h2>
           <p class="section-sub">Have questions about our programs or memberships? Drop by our studio or give us a call. We're here to help you start your journey.</p>
           <div class="mt-lg flex-column-gap">
-            <div class="glass-panel glass-panel p-md" style="display:flex; align-items:flex-start; gap:20px;">
+            <div class="glass-panel p-md" style="display:flex; align-items:flex-start; gap:20px;">
               <div style="font-size:28px; color:var(--gold);">📍</div>
               <div>
                 <h4 class="text-display-xs">Location</h4>
                 <p class="text-body-md">Urapakkam<br>Chennai, Tamil Nadu</p>
               </div>
             </div>
-            <div class="glass-panel glass-panel p-md" style="display:flex; align-items:flex-start; gap:20px;">
+            <div class="glass-panel p-md" style="display:flex; align-items:flex-start; gap:20px;">
               <div style="font-size:28px; color:var(--gold);">📞</div>
               <div>
                 <h4 class="text-display-xs">Phone & Email</h4>
                 <p class="text-body-md"><a href="tel:6382973619" style="color:var(--gold);">6382973619</a><br><a href="mailto:pradeepvishal007@gmail.com">pradeepvishal007@gmail.com</a></p>
               </div>
             </div>
-            <div class="glass-panel glass-panel p-md" style="display:flex; align-items:flex-start; gap:20px;">
+            <div class="glass-panel p-md" style="display:flex; align-items:flex-start; gap:20px;">
               <div style="font-size:28px; color:var(--gold);">🕐</div>
               <div>
                 <h4 class="text-display-xs">Hours</h4>
@@ -531,7 +534,7 @@
           </div>
         </div>
         <div class="gs-reveal" style="background:var(--black); border:1px solid rgba(255,215,0,0.1); border-radius:var(--radius-lg) var(--radius-lg) 0 0; overflow:hidden; min-height:400px; position:relative;">
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15556.76019553641!2d80.0592967!3d12.8315147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f7a46abf4ad9%3A0x6b63695276eab8e4!2sUrapakkam%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; position:absolute; inset:0; filter: grayscale(70%) contrast(120%) opacity(0.8);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15556.76019553641!2d80.0592967!3d12.8315147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52f7a46abf4ad9%3A0x6b63695276eab8e4!2sUrapakkam%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; position:absolute; inset:0; filter: grayscale(70%) contrast(120%) opacity(0.8);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="7 Muscle Fitness Studio location map"></iframe>
         </div>
       </div>
     </div>
@@ -583,7 +586,7 @@
         </div>
       </div>
       <div class="footer-bottom" style="margin-top:40px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-items:center;">
-        <div class="footer-copy" style="color:var(--gray); font-size:13px;">&copy; 2024 7 Muscle Fitness Studio. All rights reserved.</div>
+        <div class="footer-copy" style="color:var(--gray); font-size:13px;">&copy; 2025 7 Muscle Fitness Studio. All rights reserved.</div>
         <div style="font-size:13px;color:var(--gray)">Made with 🏋️ in Urapakkam, Chennai</div>
       </div>
     </div>

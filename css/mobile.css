@@ -1033,26 +1033,22 @@
 /* ============================================
    MOBILE LAYOUT FIXES (USER REQS)
    ============================================ */
-.hero-section,
-.hero-immersive,
-.page-hero {
-  padding-top: calc(60px + env(safe-area-inset-top)) !important;
-}
-
-.mobile-menu {
-  display: none;
-}
-
 @media (max-width: 768px) {
+  .hero-section,
+  .hero-immersive,
+  .page-hero {
+    padding-top: calc(60px + env(safe-area-inset-top)) !important;
+  }
+
   .desktop-nav-links,
   .nav-links,
   .nav-cta {
     display: none !important;
   }
-  
-  .mobile-menu,
+
+  /* Use block (not flex) so the existing max-height animation works */
   .mobile-nav {
-    display: flex !important;
+    display: block !important;
   }
 
   .programs-grid {
@@ -1063,7 +1059,7 @@
     padding-bottom: 12px !important;
     -webkit-overflow-scrolling: touch !important;
   }
-  
+
   .program-card {
     min-width: 240px !important;
     scroll-snap-align: start !important;
@@ -1077,13 +1073,13 @@
     gap: 16px !important;
     padding: 0 16px 16px !important;
   }
-  
+
   .pricing-card,
   .pricing-luxury {
     min-width: 240px !important;
     scroll-snap-align: center !important;
   }
-  
+
   .popular-badge,
   .pricing-badge,
   .pricing-badge-luxury {
@@ -1100,7 +1096,7 @@
     scroll-snap-type: x mandatory !important;
     -webkit-overflow-scrolling: touch !important;
   }
-  
+
   .review-card,
   .testimonial-card,
   .reviews-slide {
@@ -1108,21 +1104,21 @@
     scroll-snap-align: center !important;
     flex-shrink: 0 !important;
   }
-}
 
-.whatsapp-float,
-.sticky-cta {
-  bottom: calc(24px + env(safe-area-inset-bottom)) !important;
-  right: 20px !important;
-  z-index: 9999 !important;
-  position: fixed !important;
-}
+  .whatsapp-float,
+  .sticky-cta {
+    bottom: calc(24px + env(safe-area-inset-bottom)) !important;
+    right: 20px !important;
+    z-index: 9999 !important;
+    position: fixed !important;
+  }
 
-.trainer-img,
-.trainer-luxury-card img {
-  width: 100% !important;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: cover !important;
-  object-position: top center !important;
-  border-radius: 12px !important;
+  .trainer-img,
+  .trainer-luxury-card img {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    border-radius: 12px !important;
+  }
 }

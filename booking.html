@@ -65,7 +65,7 @@
   <a href="programs.html">Programs</a>
   <a href="membership.html">Membership</a>
   <a href="booking.html">Book Free Trial</a>
-  <a href="/dashboard" data-auth-account">My Account</a>
+  <a href="/dashboard" data-auth-account>My Account</a>
 </div>
 
 <div class="page-hero">
@@ -86,58 +86,10 @@
             <p style="font-size:14px;color:var(--gray)">Fill in your details and our team will call you within 2 hours to confirm your slot.</p>
           </div>
 
-          <!-- SUCCESS MESSAGE -->
-          <div id="booking-success" style="display:none;background:rgba(37,211,102,0.1);border:1px solid rgba(37,211,102,0.3);border-radius:var(--radius);padding:24px;text-align:center;margin-bottom:24px">
-            <div style="font-size:48px;margin-bottom:12px">🎉</div>
-            <h3 class="text-display-md">Trial Booked!</h3>
-            <p style="font-size:14px;color:var(--gray)">We'll call you within 2 hours to confirm your slot. See you at 7 Muscle!</p>
-            <a href="https://wa.me/916382973619" target="_blank" class="btn btn-gold" style="margin-top:16px;display:inline-flex">💬 Chat on WhatsApp</a>
+          <!-- React Mounting Point -->
+          <div id="react-booking-root">
+            <div style="padding:40px; text-align:center; color:var(--gray);">Loading booking form...</div>
           </div>
-
-          <form id="booking-form" novalidate>
-            <div class="form-group">
-              <label class="form-label" for="fname">Full Name *</label>
-              <input type="text" id="fname" name="name" class="form-control" placeholder="Your full name" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="fphone">Phone Number *</label>
-              <input type="tel" id="fphone" name="phone" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="fgoal">Your Fitness Goal *</label>
-              <select id="fgoal" name="goal" class="form-control" required>
-                <option value="" disabled selected>Select your primary goal</option>
-                <option value="Weight Loss">Weight Loss 🔥</option>
-                <option value="Muscle Building">Muscle Building 💪</option>
-                <option value="Body Toning">Body Toning ✨</option>
-                <option value="General Fitness">General Fitness 🏃</option>
-                <option value="Women's Fitness">Women's Fitness 👩</option>
-                <option value="Personal Training">Personal Training 🎯</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="fslot">Preferred Time Slot *</label>
-              <select id="fslot" name="time_slot" class="form-control" required>
-                <option value="" disabled selected>Select your preferred time</option>
-                <option value="5AM - 7AM">Early Morning: 5AM – 7AM</option>
-                <option value="7AM - 9AM">Morning: 7AM – 9AM</option>
-                <option value="9AM - 11AM">Late Morning: 9AM – 11AM</option>
-                <option value="4PM - 6PM">Evening: 4PM – 6PM</option>
-                <option value="6PM - 8PM">Prime Evening: 6PM – 8PM</option>
-                <option value="8PM - 10PM">Night: 8PM – 10PM</option>
-              </select>
-            </div>
-            <div style="background:rgba(255,215,0,0.06);border:1px solid rgba(255,215,0,0.2);border-radius:var(--radius);padding:14px;margin-bottom:20px">
-              <p style="font-size:13px;color:var(--gray);line-height:1.6">
-                ✅ <strong style="color:var(--white)">Completely Free</strong> — no payment required<br>
-                ✅ <strong style="color:var(--white)">No Commitment</strong> — zero pressure to join<br>
-                ✅ <strong style="color:var(--white)">We'll Call You</strong> — within 2 hours to confirm
-              </p>
-            </div>
-            <button type="submit" class="btn btn-gold btn-full btn-lg">
-              💪 Book My Free Trial Session
-            </button>
-          </form>
         </div>
       </div>
 
@@ -266,7 +218,7 @@
         </div>
       </div>
       <div class="footer-bottom mt-md">
-        <div class="footer-copy" style="color:var(--gray); font-size:13px;">&copy; 2024 7 Muscle Fitness Studio. All rights reserved.</div>
+        <div class="footer-copy" style="color:var(--gray); font-size:13px;">&copy; 2025 7 Muscle Fitness Studio. All rights reserved.</div>
         <div style="font-size:13px;color:var(--gray)">Made with 🏋️ in Urapakkam, Chennai</div>
       </div>
     </div>
@@ -286,5 +238,13 @@
 <script src="js/hero_graphics.js?v=20260519a"></script>
 <script src="js/svg_icons.js?v=20260519a"></script>
 <script src="js/app_v4.js?v=20260616"></script>
+<!-- React & Babel CDNs -->
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- React Components -->
+<script type="text/babel" src="js/components/BookingForm.jsx"></script>
+
 </body>
 </html>
