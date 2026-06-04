@@ -384,7 +384,7 @@ h5 {
   gap: 12px;
 }
 
-.hamburger {
+.hamburger, .mobile-only-flex {
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -2146,7 +2146,7 @@ footer {
     display: none;
   }
 
-  .hamburger {
+  .hamburger, .mobile-only-flex {
     display: flex;
   }
 
@@ -2317,7 +2317,7 @@ footer {
     display: none;
   }
 
-  .hamburger {
+  .hamburger, .mobile-only-flex {
     display: flex;
   }
 
@@ -2803,7 +2803,7 @@ body {
     height: 46px;
   }
   /* Ensure hamburger is always visible and properly sized */
-  .hamburger {
+  .hamburger, .mobile-only-flex {
     display: flex !important;
     padding: 6px;
     gap: 5px;

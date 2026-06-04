@@ -47,15 +47,9 @@
   <div class="nav-cta">
     <button class="btn btn-outline logout-btn">Sign Out</button>
   </div>
-  <button class="hamburger"><span></span><span></span><span></span></button>
-</nav>
-
-<div class="mobile-nav">
-  <a href="index.html">Home</a>
-  <a href="programs.html">Programs</a>
-  <a href="membership.html">Membership</a>
-  <button class="logout-btn text-display-md">Sign Out</button>
-</div>
+    <!-- React Mobile Nav Mount Point -->
+    <div id="react-mobile-nav-root" class="mobile-only-flex"></div>
+  </nav>
 
 <!-- REACT APP ROOT -->
 <div id="react-dashboard-root">
@@ -73,6 +67,7 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
 <!-- React Dashboard Component -->
+<script type="text/babel" src="js/components/MobileNav.jsx"></script>
 <script type="text/babel" src="js/components/DashboardApp.jsx"></script>
 
 <script src="js/loader.js?v=20260417a"></script>

@@ -62,20 +62,9 @@
       <a href="booking.html#book-trial" class="btn btn-gold">Free Trial</a>
       <a href="/login" data-auth-login class="btn btn-outline">Login</a>
     </div>
-    <button class="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <!-- React Mobile Nav Mount Point -->
+    <div id="react-mobile-nav-root" class="mobile-only-flex"></div>
   </nav>
-
-  <!-- MOBILE NAV -->
-  <div class="mobile-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="programs.html">Programs</a>
-    <a href="membership.html">Membership</a>
-    <a href="booking.html">Book Free Trial</a>
-    <a href="/dashboard" data-auth-account>My Account</a>
-  </div>
 
   <!-- IMMERSIVE HERO -->
   <section class="hero-immersive" id="home">
@@ -610,5 +599,12 @@
   <script src="js/hero_graphics.js?v=20260519a"></script>
   <script src="js/svg_icons.js?v=20260519a"></script>
   <script src="js/app_v4.js?v=20260616"></script>
+
+  <!-- React & Babel CDNs for Mobile Nav -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel" src="js/components/MobileNav.jsx"></script>
+
 </body>
 </html>

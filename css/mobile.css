@@ -250,9 +250,9 @@
 
   /* —— Sticky CTAs + safe area —— */
   .sticky-cta {
-    bottom: max(12px, env(safe-area-inset-bottom));
-    right: max(10px, env(safe-area-inset-right));
-    gap: 8px;
+    bottom: max(20px, calc(16px + env(safe-area-inset-bottom)));
+    right: max(16px, env(safe-area-inset-right));
+    gap: 12px;
   }
 
   .whatsapp-btn {
@@ -268,8 +268,11 @@
   }
 
   .sticky-join-btn {
-    font-size: 10px;
-    padding: 8px 14px;
+    font-size: 13px;
+    padding: 0 20px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
     border-radius: 22px;
     animation: none;
   }
