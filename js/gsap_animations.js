@@ -158,234 +158,131 @@ if (typeof gsap !== 'undefined') {
 // REVIEWS / TESTIMONIALS CAROUSEL (standalone)
 // ============================================
 function initReviewsSlider() {
-  const section = document.getElementById('reviews');
   const container = document.getElementById('reviews-carousel');
-  if (!section || !container || container.dataset.reviewsReady === 'true') return;
+  if (!container || container.dataset.reviewsReady === 'true') return;
+  
+  // Only apply infinite mobile slider if on mobile view
+  if (window.innerWidth > 768) return;
 
   const viewport = container.querySelector('.reviews-carousel__viewport');
   const track = container.querySelector('.reviews-carousel__track');
-  const slides = container.querySelectorAll('.reviews-slide');
-  const dotsContainer = container.querySelector('.reviews-dots');
+  const originalSlides = Array.from(container.querySelectorAll('.reviews-slide'));
+  let dotsContainer = container.querySelector('.reviews-dots');
 
-  if (!viewport || !track || slides.length === 0) return;
+  if (!viewport || !track || originalSlides.length === 0) return;
 
-  if (container.dataset.reviewsReady === 'true') return;
   container.dataset.reviewsReady = 'true';
 
-  const totalSlides = slides.length;
   const AUTOPLAY_MS = 5000;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let currentIndex = 0;
+  let currentIndex = 1; // Start at 1 because 0 is the prepended clone
   let autoplayInterval = null;
-  let autoplayEnabled = true;
-  let pausedUntilScroll = false;
+  let isTransitioning = false;
 
-  function getSlideWidth() {
-    return viewport.clientWidth || viewport.getBoundingClientRect().width;
-  }
+  // 1. Clone slides for infinite loop
+  const firstClone = originalSlides[0].cloneNode(true);
+  const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
 
-  function syncSlideWidths() {
-    return getSlideWidth() > 0;
-  }
+  firstClone.classList.add('clone');
+  lastClone.classList.add('clone');
 
-  function getTrackOffset() {
-    const slide = slides[currentIndex];
-    return slide ? slide.offsetLeft : currentIndex * getSlideWidth();
-  }
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, originalSlides[0]);
 
-  function setActiveSlide() {
-    slides.forEach((slide, i) => {
-      const active = i === currentIndex;
-      slide.classList.toggle('is-active', active);
-      slide.setAttribute('aria-hidden', active ? 'false' : 'true');
-    });
+  const allSlides = Array.from(track.children);
 
-    dotsContainer?.querySelectorAll('.reviews-dot').forEach((dot, i) => {
-      const active = i === currentIndex;
-      dot.classList.toggle('active', active);
-      dot.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-  }
+  // 2. Setup track styles
+  track.style.display = 'flex';
+  track.style.transition = 'none';
+  track.style.transform = `translateX(-100%)`;
 
-  function setTrackPosition(animate) {
-    if (!syncSlideWidths()) return;
-    const offset = getTrackOffset();
-
-    if (animate && !prefersReducedMotion) {
-      track.classList.remove('no-transition');
-    } else {
-      track.classList.add('no-transition');
-      requestAnimationFrame(() => track.classList.remove('no-transition'));
-    }
-
-    track.style.transform = `translate3d(${-offset}px, 0, 0)`;
-    setActiveSlide();
-  }
-
-  function goTo(index, animate = true) {
-    currentIndex = ((index % totalSlides) + totalSlides) % totalSlides;
-    setTrackPosition(animate);
-  }
-
-  function next() {
-    goTo(currentIndex + 1);
-  }
-
-  function prev() {
-    goTo(currentIndex - 1);
-  }
-
-  function stopAutoplay() {
-    if (autoplayInterval) {
-      clearInterval(autoplayInterval);
-      autoplayInterval = null;
-    }
-  }
-
-  function runAutoplayInterval() {
-    if (autoplayInterval) clearInterval(autoplayInterval);
-    autoplayInterval = setInterval(() => {
-      next();
-    }, AUTOPLAY_MS);
-  }
-
-  function startAutoplay() {
-    stopAutoplay();
-    if (!autoplayEnabled || document.hidden || pausedUntilScroll) return;
-    runAutoplayInterval();
-  }
-
-  /** Manual slide change — stay paused until the user scrolls the page */
-  function pauseAutoplayUntilScroll() {
-    stopAutoplay();
-    pausedUntilScroll = true;
-  }
-
-  function resumeIfScrollPaused() {
-    if (!pausedUntilScroll) return;
-    if (!autoplayEnabled || document.hidden) return;
-    pausedUntilScroll = false;
-    startAutoplay();
-  }
-
-  window.addEventListener('scroll', resumeIfScrollPaused, { passive: true });
-
+  // 3. Setup Dots
   if (dotsContainer) {
     dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
+    originalSlides.forEach((_, i) => {
       const dot = document.createElement('button');
-      dot.type = 'button';
       dot.className = 'reviews-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('role', 'tab');
-      dot.setAttribute('aria-label', `Review ${i + 1} of ${totalSlides}`);
-      dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-      dot.addEventListener('click', (e) => {
-        e.stopPropagation();
-        goTo(i);
-        pauseAutoplayUntilScroll();
-      });
+      dot.setAttribute('aria-label', `Go to review ${i + 1}`);
+      dot.addEventListener('click', () => goToSlide(i + 1));
       dotsContainer.appendChild(dot);
-    }
+    });
   }
 
-  const DRAG_THRESHOLD = 40;
-  let startX = 0;
-  let isDragging = false;
-  let activePointerId = null;
+  const updateDots = () => {
+    if (!dotsContainer) return;
+    const dots = dotsContainer.querySelectorAll('.reviews-dot');
+    dots.forEach(d => d.classList.remove('active'));
+    
+    // Calculate real index
+    let realIndex = currentIndex - 1;
+    if (currentIndex === 0) realIndex = originalSlides.length - 1;
+    if (currentIndex === allSlides.length - 1) realIndex = 0;
+    
+    if (dots[realIndex]) dots[realIndex].classList.add('active');
+  };
 
-  function endDrag(clientX, pointerId) {
-    if (!isDragging) return;
-    isDragging = false;
-    viewport.classList.remove('is-dragging');
-    if (pointerId != null) {
-      try { viewport.releasePointerCapture(pointerId); } catch (_) { /* noop */ }
+  const goToSlide = (index, smooth = true) => {
+    if (isTransitioning && smooth) return;
+    currentIndex = index;
+    
+    track.style.transition = smooth ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    updateDots();
+
+    if (smooth) {
+      isTransitioning = true;
+      setTimeout(() => {
+        isTransitioning = false;
+        // Loop back seamlessly
+        if (currentIndex === 0) {
+          goToSlide(originalSlides.length, false);
+        } else if (currentIndex === allSlides.length - 1) {
+          goToSlide(1, false);
+        }
+      }, 500);
     }
-    activePointerId = null;
+  };
 
-    const diff = startX - clientX;
-    if (Math.abs(diff) > DRAG_THRESHOLD) {
-      if (diff > 0) next();
-      else prev();
-    }
-    pauseAutoplayUntilScroll();
-  }
+  const nextSlide = () => goToSlide(currentIndex + 1);
+  const prevSlide = () => goToSlide(currentIndex - 1);
 
-  viewport.addEventListener('pointerdown', (e) => {
-    if (e.button !== 0) return;
-    isDragging = true;
-    activePointerId = e.pointerId;
-    startX = e.clientX;
-    viewport.classList.add('is-dragging');
-    viewport.setPointerCapture(e.pointerId);
+  // 4. Auto Play
+  const startAutoplay = () => {
+    clearInterval(autoplayInterval);
+    autoplayInterval = setInterval(nextSlide, AUTOPLAY_MS);
+  };
+
+  const stopAutoplay = () => clearInterval(autoplayInterval);
+
+  // 5. Touch / Swipe Support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  viewport.addEventListener('touchstart', (e) => {
     stopAutoplay();
-  });
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
 
-  viewport.addEventListener('pointerup', (e) => {
-    if (activePointerId !== e.pointerId) return;
-    endDrag(e.clientX, e.pointerId);
-  });
-
-  viewport.addEventListener('pointercancel', (e) => {
-    if (activePointerId !== e.pointerId) return;
-    endDrag(e.clientX, e.pointerId);
-  });
-
-  container.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      prev();
-      pauseAutoplayUntilScroll();
-    } else if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      next();
-      pauseAutoplayUntilScroll();
-    }
-  });
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      stopAutoplay();
-    } else if (!pausedUntilScroll) {
-      startAutoplay();
-    }
-  });
-
-  const resizeObserver = typeof ResizeObserver !== 'undefined'
-    ? new ResizeObserver(() => {
-        syncSlideWidths();
-        goTo(currentIndex, false);
-      })
-    : null;
-  resizeObserver?.observe(viewport);
-
-  window.addEventListener('resize', () => {
-    syncSlideWidths();
-    goTo(currentIndex, false);
-  });
-
-  function boot() {
-    goTo(0, false);
+  viewport.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
     startAutoplay();
-  }
+  }, { passive: true });
 
-  boot();
+  const handleSwipe = () => {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) nextSlide();
+      else prevSlide();
+    }
+  };
 
-  if (typeof IntersectionObserver !== 'undefined') {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          autoplayEnabled = entry.isIntersecting;
-          if (autoplayEnabled && !pausedUntilScroll) {
-            startAutoplay();
-          } else if (!autoplayEnabled) {
-            stopAutoplay();
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: '0px 0px -10% 0px' },
-    );
-    observer.observe(container);
-  }
+  // Run on load
+  setTimeout(() => {
+    goToSlide(1, false);
+    startAutoplay();
+  }, 100);
 }
 
 function bootReviewsSliderWhenReady() {
