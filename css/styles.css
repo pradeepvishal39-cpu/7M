@@ -505,6 +505,27 @@ h5 {
 }
 
 .sticky-join-btn {
+  background: var(--red);
+  color: var(--white);
+  padding: 14px 24px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(255, 59, 59, 0.28);
+  transition: var(--transition);
+  animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+}
+
+.sticky-join-btn:hover {
+  animation-play-state: paused;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(255, 59, 59, 0.5);
+  background: var(--red2);
+}
+
+.sticky-call-btn {
   background: var(--gold);
   color: var(--black);
   padding: 14px 24px;
@@ -513,15 +534,15 @@ h5 {
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  box-shadow: 0 4px 20px rgba(255, 234, 0, 0.28);
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.28);
   transition: var(--transition);
-  animation: float 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+  animation: float 3s ease-in-out infinite, glow-gold 2s ease-in-out infinite alternate;
 }
 
-.sticky-join-btn:hover {
+.sticky-call-btn:hover {
   animation-play-state: paused;
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 32px rgba(255, 234, 0, 0.5);
+  box-shadow: 0 12px 32px rgba(255, 215, 0, 0.5);
   background: var(--gold2);
 }
 
@@ -537,6 +558,15 @@ h5 {
 }
 
 @keyframes glow {
+  0% {
+    box-shadow: 0 4px 20px rgba(255, 59, 59, 0.28);
+  }
+  100% {
+    box-shadow: 0 4px 30px rgba(255, 59, 59, 0.56);
+  }
+}
+
+@keyframes glow-gold {
   0% {
     box-shadow: 0 4px 20px rgba(255, 215, 0, 0.28);
   }

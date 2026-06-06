@@ -412,101 +412,6 @@ function initBookingForm() {
 }
 
 // ============================================
-// MOBILE SLIDER: ZOOM FOCUS (No Infinite Loop)
-// ============================================
-function initMobileSliders() {
-  const sliderGrids = document.querySelectorAll(
-    '.programs-grid, .trainers-grid, .pricing-grid, .testimonials-grid, .features-grid'
-  );
-  if (!sliderGrids.length) return;
-
-  if (window.innerWidth > 768) return;
-
-  const observerOptions = {
-    root: null,
-    threshold: 0.6,
-    rootMargin: '0px -25% 0px -25%'
-  };
-
-  sliderGrids.forEach(grid => {
-    if (grid.dataset.mobileSlider === 'true') return;
-    grid.dataset.mobileSlider = 'true';
-
-    const items = Array.from(grid.children).filter(
-      (el) => el.matches('.feature-card, .program-card, .trainer-card, .testimonial-card, .pricing-card, .pricing-luxury')
-    );
-    if (!items.length) return;
-
-    const dotsContainer = document.createElement('div');
-    dotsContainer.className = 'slider-dots';
-    
-    const scrollToItem = (idx) => {
-      const itemLeft = items[idx].offsetLeft;
-      const itemWidth = items[idx].offsetWidth;
-      const gridWidth = grid.offsetWidth;
-      grid.scrollTo({
-        left: itemLeft - (gridWidth / 2) + (itemWidth / 2),
-        behavior: 'smooth'
-      });
-    };
-
-    items.forEach((_, idx) => {
-      const dot = document.createElement('div');
-      dot.className = 'slider-dot' + (idx === 0 ? ' active' : '');
-      dot.style.cursor = 'pointer';
-      dot.addEventListener('click', () => {
-        stopAutoPlay();
-        scrollToItem(idx);
-        startAutoPlay();
-      });
-      dotsContainer.appendChild(dot);
-    });
-    grid.insertAdjacentElement('afterend', dotsContainer);
-    const dots = dotsContainer.querySelectorAll('.slider-dot');
-
-    const focalObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const sisters = grid.querySelectorAll('.centered');
-          sisters.forEach(s => s.classList.remove('centered'));
-          entry.target.classList.add('centered');
-
-          // Update dots
-          const idx = items.indexOf(entry.target);
-          if (idx !== -1) {
-            dots.forEach(d => d.classList.remove('active'));
-            dots[idx].classList.add('active');
-          }
-        }
-      });
-    }, observerOptions);
-
-    // Start focal observer on all items
-    items.forEach(item => focalObserver.observe(item));
-
-    // Auto-roller (Auto-play)
-    let autoPlayInterval;
-    const startAutoPlay = () => {
-      clearInterval(autoPlayInterval);
-      autoPlayInterval = setInterval(() => {
-        let currentIdx = Array.from(dots).findIndex(d => d.classList.contains('active'));
-        if (currentIdx === -1) currentIdx = 0;
-        const nextIdx = (currentIdx + 1) % items.length;
-        scrollToItem(nextIdx);
-      }, 3500);
-    };
-    const stopAutoPlay = () => clearInterval(autoPlayInterval);
-
-    grid.addEventListener('touchstart', stopAutoPlay, { passive: true });
-    grid.addEventListener('touchend', () => {
-      setTimeout(startAutoPlay, 2000); // Wait 2s after touch ends before resuming auto-play
-    }, { passive: true });
-    
-    startAutoPlay();
-  });
-}
-
-// ============================================
 // INIT ALL
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -519,7 +424,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounters();
   }
   initBookingForm();
-  initMobileSliders();
 
   // Default countdown: 3 days from now
   const target = new Date();

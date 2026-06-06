@@ -1126,6 +1126,7 @@
   }
 }
 
+
 /* ============================================
    PREMIUM MOBILE REBUILD OVERRIDES (2026)
    ============================================ */
@@ -1236,7 +1237,7 @@
   }
 
   /* AVOID HORIZONTAL SCROLL BUGS IN CARDS */
-  .features-grid, .pricing-grid, .bento-grid, .prog-grid {
+  .features-grid, .bento-grid, .prog-grid {
     display: flex !important;
     flex-direction: column !important;
     gap: 24px !important;
@@ -1245,7 +1246,7 @@
     scroll-snap-type: none !important;
   }
 
-  .feature-card, .pricing-luxury, .trainer-luxury-card, .bento-item, .program-card {
+  .feature-card, .trainer-luxury-card, .bento-item, .program-card {
     width: 100% !important;
     max-width: 100% !important;
     flex: none !important;
@@ -1256,29 +1257,29 @@
   /* REVIEWS SECTION FIXES */
   .reviews-carousel {
     width: 100% !important;
-    overflow: hidden !important;
     position: relative !important;
     padding-bottom: 40px !important;
   }
 
   .reviews-carousel__viewport {
     width: 100% !important;
-    overflow: hidden !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
   }
 
   .reviews-carousel__track {
     display: flex !important;
     width: 100% !important;
     align-items: stretch !important;
-    will-change: transform;
   }
 
   .reviews-slide {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    min-width: 100% !important;
+    flex: 0 0 90% !important;
+    width: 90% !important;
+    min-width: 90% !important;
     padding: 24px !important;
     box-sizing: border-box !important;
+    scroll-snap-align: center;
   }
 
   .reviews-dots {
