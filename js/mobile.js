@@ -348,8 +348,7 @@
     }
 
     function applyMode() {
-      if (isMobile()) enableScrollMode();
-      else enableDesktopGrid();
+      enableScrollMode();
     }
 
     applyMode();
@@ -358,7 +357,7 @@
     const visObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && isMobile()) startAutoplay();
+          if (entry.isIntersecting) startAutoplay();
           else stopAutoplay();
         });
       },

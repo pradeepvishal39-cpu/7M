@@ -95,17 +95,23 @@ function initAllAnimations() {
     // 5. NUMBER COUNTERS
     gsap.utils.toArray('[data-target]').forEach((element) => {
       const targetValue = parseInt(element.getAttribute('data-target'), 10);
+      const isPlus = element.innerText.includes('+');
+      
+      // Ensure text is visible immediately if JS fails
+      element.style.visibility = 'visible';
+
       ScrollTrigger.create({
         trigger: element,
-        start: 'top 90%',
+        start: 'top 95%',
         once: true,
         onEnter: () => {
-          gsap.to({ value: 0 }, {
-            value: targetValue,
+          let proxy = { val: 0 };
+          gsap.to(proxy, {
+            val: targetValue,
             duration: 2.5,
-            ease: 'power4.out',
+            ease: 'expo.out',
             onUpdate: function () {
-              element.textContent = Math.floor(this.targets()[0].value) + (element.dataset.target == 500 || element.dataset.target == 90 ? '+' : '');
+              element.textContent = Math.floor(proxy.val) + (isPlus ? '+' : '');
             },
           });
         }

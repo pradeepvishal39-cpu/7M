@@ -366,6 +366,82 @@ function initCounters() {
 }
 
 // ============================================
+// SCROLL TO TOP
+// ============================================
+function initScrollToTop() {
+  const scrollWrapper = document.getElementById('scrollTopWrapper');
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  const resetBtn = document.getElementById('scrollResetBtn');
+  const statusText = document.querySelector('.scroll-status-text');
+  
+  if (!scrollWrapper || !scrollBtn) return;
+
+  let isAnimating = false;
+
+  window.addEventListener('scroll', () => {
+    if (isAnimating) return;
+
+    const scrollTop = window.scrollY;
+    if (scrollTop > 300) {
+      scrollWrapper.classList.add('visible');
+    } else {
+      scrollWrapper.classList.remove('visible');
+    }
+
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollBtn.style.setProperty('--scroll-progress', `${progress}%`);
+  }, { passive: true });
+
+  scrollBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (isAnimating) return;
+    
+    isAnimating = true;
+    
+    // Step 2: Fill Animation
+    scrollWrapper.classList.add('is-filling');
+    
+    // Step 3: Launch (700ms after click)
+    setTimeout(() => {
+      scrollWrapper.classList.remove('is-filling');
+      scrollWrapper.classList.add('is-launching');
+      
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      
+      // Step 4: Land & Confirm (1400ms after click = 700ms after launch)
+      setTimeout(() => {
+        scrollWrapper.classList.remove('is-launching');
+        scrollWrapper.classList.add('is-landed');
+        if (statusText) statusText.textContent = "reached the top ✓";
+      }, 700);
+      
+    }, 700);
+  });
+
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      // Step 5: Reset
+      scrollWrapper.classList.remove('is-landed');
+      if (statusText) statusText.textContent = "scrolling to top ↑";
+      scrollBtn.style.setProperty('--scroll-progress', '0%');
+      isAnimating = false;
+      
+      // Re-evaluate scroll position immediately
+      const scrollTop = window.scrollY;
+      if (scrollTop > 300) {
+        scrollWrapper.classList.add('visible');
+      } else {
+        scrollWrapper.classList.remove('visible');
+      }
+    });
+  }
+}
+
+// ============================================
 // BOOKING FORM
 // ============================================
 function initBookingForm() {
@@ -424,6 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounters();
   }
   initBookingForm();
+  initScrollToTop();
 
   // Default countdown: 3 days from now
   const target = new Date();

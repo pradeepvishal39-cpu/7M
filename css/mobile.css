@@ -10,7 +10,7 @@
 
   body,
   #main-content {
-    overflow-x: clip;
+    overflow-x: hidden;
     max-width: 100%;
   }
 
@@ -250,9 +250,48 @@
 
   /* —— Sticky CTAs + safe area —— */
   .sticky-cta {
-    bottom: max(20px, calc(16px + env(safe-area-inset-bottom)));
-    right: max(16px, env(safe-area-inset-right));
-    gap: 12px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,215,0,0.15);
+    padding: 10px 16px max(10px, env(safe-area-inset-bottom));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    gap: 8px;
+  }
+  
+  .sticky-cta .btn {
+    flex: 1;
+    text-align: center;
+    border-radius: 8px;
+    margin: 0;
+  }
+  
+  .sticky-cta .whatsapp-btn,
+  .sticky-cta .phone-btn {
+    flex: 0 0 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sticky-cta .whatsapp-btn {
+    background: #25D366;
+  }
+  
+  .sticky-cta .phone-btn {
+    background: rgba(255,215,0,0.1);
+    color: var(--gold);
+    font-size: 20px;
+    text-decoration: none;
   }
 
   .whatsapp-btn {
@@ -411,7 +450,7 @@
 
   body,
   #main-content {
-    overflow-x: clip;
+    overflow-x: hidden;
     max-width: 100%;
   }
 

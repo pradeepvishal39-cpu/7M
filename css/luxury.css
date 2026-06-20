@@ -600,7 +600,7 @@
 }
 
 .reviews-slide {
-  flex: 0 0 90%;
+  flex: 0 0 100%;
   scroll-snap-align: center;
   width: 100%;
   min-width: 0;
@@ -728,7 +728,10 @@
 
 /* Pagination dots — below review card */
 .reviews-dots {
-  display: none !important;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
 }
 
 .reviews-dot {
