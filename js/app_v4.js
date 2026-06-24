@@ -42,18 +42,8 @@ function getNavbarRollAnchor() {
 }
 
 function syncNavbarRollUp(navbar, rollAnchor, state) {
-  let pastAnchor = false;
-
-  if (rollAnchor) {
-    pastAnchor = rollAnchor.getBoundingClientRect().bottom <= 0;
-  } else {
-    pastAnchor = window.scrollY > navbar.offsetHeight + 120;
-  }
-
-  if (pastAnchor !== state.lastRolledUp) {
-    navbar.classList.toggle('navbar--rolled-up', pastAnchor);
-    state.lastRolledUp = pastAnchor;
-  }
+  // Disabling the roll-up behavior so the navbar is always fixed
+  navbar.classList.remove('navbar--rolled-up');
 }
 
 function initNavbar() {
@@ -371,74 +361,24 @@ function initCounters() {
 function initScrollToTop() {
   const scrollWrapper = document.getElementById('scrollTopWrapper');
   const scrollBtn = document.getElementById('scrollTopBtn');
-  const resetBtn = document.getElementById('scrollResetBtn');
-  const statusText = document.querySelector('.scroll-status-text');
   
   if (!scrollWrapper || !scrollBtn) return;
 
-  let isAnimating = false;
-
   window.addEventListener('scroll', () => {
-    if (isAnimating) return;
-
-    const scrollTop = window.scrollY;
-    if (scrollTop > 300) {
+    if (window.scrollY > 300) {
       scrollWrapper.classList.add('visible');
     } else {
       scrollWrapper.classList.remove('visible');
     }
-
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    scrollBtn.style.setProperty('--scroll-progress', `${progress}%`);
   }, { passive: true });
 
   scrollBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    if (isAnimating) return;
-    
-    isAnimating = true;
-    
-    // Step 2: Fill Animation
-    scrollWrapper.classList.add('is-filling');
-    
-    // Step 3: Launch (700ms after click)
-    setTimeout(() => {
-      scrollWrapper.classList.remove('is-filling');
-      scrollWrapper.classList.add('is-launching');
-      
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-      
-      // Step 4: Land & Confirm (1400ms after click = 700ms after launch)
-      setTimeout(() => {
-        scrollWrapper.classList.remove('is-launching');
-        scrollWrapper.classList.add('is-landed');
-        if (statusText) statusText.textContent = "reached the top ✓";
-      }, 700);
-      
-    }, 700);
-  });
-
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      // Step 5: Reset
-      scrollWrapper.classList.remove('is-landed');
-      if (statusText) statusText.textContent = "scrolling to top ↑";
-      scrollBtn.style.setProperty('--scroll-progress', '0%');
-      isAnimating = false;
-      
-      // Re-evaluate scroll position immediately
-      const scrollTop = window.scrollY;
-      if (scrollTop > 300) {
-        scrollWrapper.classList.add('visible');
-      } else {
-        scrollWrapper.classList.remove('visible');
-      }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-  }
+  });
 }
 
 // ============================================

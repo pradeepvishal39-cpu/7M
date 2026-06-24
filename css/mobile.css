@@ -1346,3 +1346,232 @@
     background: var(--gold) !important;
   }
 }
+
+/* ============================================
+   LESMILLS-INSPIRED MOBILE HERO REDESIGN
+   Full-bleed · Cinematic · Title-first layout
+   ============================================ */
+@media (max-width: 768px) {
+
+  /* ── Navbar: slim, always-dark, clean ── */
+  .navbar {
+    height: 56px !important;
+    background: rgba(8, 8, 8, 0.96) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    padding: 0 16px !important;
+  }
+
+  .navbar.scrolled {
+    background: rgba(6, 6, 6, 1) !important;
+    border-bottom-color: rgba(255, 215, 0, 0.15) !important;
+  }
+
+  .nav-logo img {
+    height: 44px !important;
+  }
+
+  /* ── Hero section: full cinematic viewport ── */
+  .hero-immersive {
+    min-height: 100svh !important;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+    padding-bottom: clamp(90px, 18vh, 130px) !important;
+  }
+
+  /* ── Background image: fill + slight zoom ── */
+  .hero-immersive-bg {
+    transform: scale(1.05) !important;
+    background-position: center 20% !important;
+  }
+
+  /* ── Overlay: LesMills-style — transparent top, dark bottom ── */
+  .hero-overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(8, 8, 8, 0.25) 0%,
+        rgba(8, 8, 8, 0.15) 30%,
+        rgba(8, 8, 8, 0.65) 65%,
+        rgba(8, 8, 8, 0.95) 100%
+      ) !important;
+  }
+
+  /* ── Hero content: bottom-anchored, centered column ── */
+  .hero-immersive-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 max(20px, env(safe-area-inset-left)) 0 max(20px, env(safe-area-inset-right)) !important;
+    gap: 0 !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Stats panel hidden on mobile ── */
+  .hero-stats-glass {
+    display: none !important;
+  }
+
+  /* ── Badge: pill-shaped, frosted ── */
+  .hero-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 8px 18px !important;
+    border-radius: 100px !important;
+    background: rgba(255, 215, 0, 0.12) !important;
+    border: 1px solid rgba(255, 215, 0, 0.25) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    font-size: clamp(0.65rem, 2.5vw, 0.75rem) !important;
+    letter-spacing: 0.1em !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-bottom: 16px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 90vw !important;
+  }
+
+  /* ── Hero title: massive, LesMills-scale ── */
+  .hero-title {
+    font-family: var(--font-display) !important;
+    font-size: clamp(3.2rem, 16vw, 6rem) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 16px !important;
+    text-align: center !important;
+    color: #fff !important;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5) !important;
+  }
+
+  /* ── Subtitle ── */
+  .hero-sub {
+    font-size: clamp(0.9rem, 3.8vw, 1.05rem) !important;
+    line-height: 1.55 !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+    max-width: 340px !important;
+    margin: 0 auto 28px !important;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.6) !important;
+  }
+
+  /* ── CTAs: full-width pill stack, bold ── */
+  .hero-ctas {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 340px !important;
+    gap: 12px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-ctas .btn {
+    width: 100% !important;
+    padding: 16px 28px !important;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.12em !important;
+    border-radius: 6px !important;
+    min-height: 52px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Primary CTA: gold, prominent */
+  .hero-ctas .btn-gold {
+    background: var(--gold) !important;
+    color: #0a0a0a !important;
+    box-shadow: 0 4px 24px rgba(255, 215, 0, 0.35) !important;
+  }
+
+  /* Secondary CTA: outlined red, less dominant */
+  .hero-ctas .btn-red {
+    background: transparent !important;
+    color: #fff !important;
+    border: 2px solid rgba(255, 255, 255, 0.35) !important;
+    box-shadow: none !important;
+  }
+
+  /* ── Scroll indicator hidden ── */
+  .scroll-indicator {
+    display: none !important;
+  }
+
+  /* ── Grid lines hidden on mobile for cleaner look ── */
+  .hero-grid-lines {
+    display: none !important;
+  }
+}
+
+/* Extra tight for small phones */
+@media (max-width: 390px) {
+  .hero-title {
+    font-size: clamp(2.8rem, 15vw, 4.5rem) !important;
+    line-height: 0.9 !important;
+  }
+
+  .hero-badge {
+    font-size: 0.6rem !important;
+    padding: 7px 14px !important;
+  }
+
+  .hero-sub {
+    font-size: 0.875rem !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+/* ── Urgency bar: dual-span desktop/mobile text ── */
+@media (max-width: 768px) {
+  .urgency-bar {
+    font-size: 10px !important;
+    padding: 7px 14px !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0.06em !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    overflow: hidden !important;
+  }
+
+  /* Keep pulse dot inline */
+  .urgency-bar .pulse-dot {
+    flex-shrink: 0 !important;
+  }
+
+  /* On mobile: show short version, hide long version */
+  .urgency-desktop {
+    display: none !important;
+  }
+
+  .urgency-mobile {
+    display: inline !important;
+    white-space: nowrap !important;
+  }
+
+  /* Link inline, no line break */
+  .urgency-bar a {
+    display: inline !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* ── Hero: increase bottom padding to clear sticky CTA bar ── */
+  .hero-immersive {
+    padding-bottom: clamp(100px, 20vh, 140px) !important;
+  }
+}
